@@ -4,8 +4,17 @@ ZOO3 是一個綜合性的區塊鏈獎勵任務平台，用戶可以通過完成
 
 ![ZOO3 Platform](https://raw.githubusercontent.com/cis2042/v0-line-ui-development/main/public/images/lion-logo.png)
 
+## 演示
+
+您可以通過以下鏈接訪問 ZOO3 平台的演示版本：
+
+🔗 [ZOO3 演示](https://cis2042.github.io/zoo3-5v/demo)
+
+> **注意**：演示版本僅展示 UI 界面，實際功能需要連接到 Kaia Chain 和 Supabase 後端。
+
 ## 目錄
 
+- [演示](#演示)
 - [技術棧](#技術棧)
 - [項目結構](#項目結構)
 - [環境變數](#環境變數)
@@ -1544,6 +1553,15 @@ export default function WalletPage() {
 
 ## 部署指南
 
+### GitHub Pages 部署
+
+本項目已配置 GitHub Actions 工作流，可自動部署到 GitHub Pages：
+
+1. Fork 或克隆此倉庫
+2. 推送更改到 `main` 分支
+3. GitHub Actions 將自動構建並部署到 GitHub Pages
+4. 訪問 `https://[your-username].github.io/zoo3-5v/demo` 查看演示
+
 ### Vercel 部署
 
 1. 連接 GitHub 倉庫到 Vercel
@@ -1555,6 +1573,28 @@ export default function WalletPage() {
 1. 在 Vercel dashboard 添加自定義域名
 2. 配置 DNS 記錄
 3. 等待域名生效
+
+### 本地開發
+
+1. 克隆倉庫：
+   ```bash
+   git clone https://github.com/cis2042/zoo3-5v.git
+   cd zoo3-5v
+   ```
+
+2. 安裝依賴：
+   ```bash
+   npm install
+   ```
+
+3. 創建 `.env.local` 文件並設置環境變數
+
+4. 啟動開發服務器：
+   ```bash
+   npm run dev
+   ```
+
+5. 訪問 http://localhost:3000 查看應用
 
 ## 貢獻指南
 
