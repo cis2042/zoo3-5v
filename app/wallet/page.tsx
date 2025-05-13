@@ -1,14 +1,14 @@
 'use client';
 
 /**
- * Bitcoin Wallet Page
- * 
- * This page demonstrates the use of the Bitcoin API.
- * It includes components for displaying Bitcoin price, wallet balance, and transaction history.
+ * WBTC Wallet Page for Kaia Chain
+ *
+ * This page demonstrates the use of the WBTC API on Kaia Chain.
+ * It includes components for displaying WBTC price, balance, and transaction history.
  */
 
 import { useState, useEffect } from 'react';
-import { useBitcoin } from '@/hooks/use-bitcoin';
+import { useWBTC } from '@/hooks/use-wbtc';
 
 export default function WalletPage() {
   const [address, setAddress] = useState<string>('');
@@ -21,20 +21,20 @@ export default function WalletPage() {
     fetchPrice,
     fetchBalance,
     fetchTransactions
-  } = useBitcoin();
-  
-  // Fetch Bitcoin price on component mount and every minute
+  } = useWBTC();
+
+  // Fetch WBTC price on component mount and every minute
   useEffect(() => {
     fetchPrice();
     const interval = setInterval(fetchPrice, 60000);
     return () => clearInterval(interval);
   }, [fetchPrice]);
-  
+
   // Handle address input change
   const handleAddressChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setAddress(e.target.value);
   };
-  
+
   // Fetch wallet information
   const handleFetchWallet = () => {
     if (address) {
@@ -42,14 +42,14 @@ export default function WalletPage() {
       fetchTransactions(address);
     }
   };
-  
+
   return (
     <div className="container mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-4">比特幣錢包</h1>
-      
-      {/* Bitcoin Price */}
+      <h1 className="text-2xl font-bold mb-4">WBTC 錢包 (Kaia Chain)</h1>
+
+      {/* WBTC Price */}
       <div className="mb-6 p-4 bg-gray-100 rounded-lg">
-        <h2 className="text-xl font-semibold mb-2">當前比特幣價格</h2>
+        <h2 className="text-xl font-semibold mb-2">當前 WBTC 價格</h2>
         {loading && !price ? (
           <p>加載中...</p>
         ) : error ? (
@@ -58,7 +58,7 @@ export default function WalletPage() {
           <p className="text-2xl font-bold">${price?.toLocaleString()} USD</p>
         )}
       </div>
-      
+
       {/* Wallet Address Input */}
       <div className="mb-6">
         <h2 className="text-xl font-semibold mb-2">查詢錢包</h2>
@@ -67,7 +67,7 @@ export default function WalletPage() {
             type="text"
             value={address}
             onChange={handleAddressChange}
-            placeholder="輸入比特幣地址"
+            placeholder="輸入 Kaia Chain 地址"
             className="flex-1 p-2 border rounded"
           />
           <button
@@ -79,33 +79,18 @@ export default function WalletPage() {
           </button>
         </div>
       </div>
-      
-      {/* Wallet Balance */}
+
+      {/* WBTC Balance */}
       {balance && (
         <div className="mb-6 p-4 bg-gray-100 rounded-lg">
-          <h2 className="text-xl font-semibold mb-2">錢包餘額</h2>
-          <div className="grid grid-cols-2 gap-4">
-            <div>
-              <p className="text-gray-600">確認餘額</p>
-              <p className="text-xl font-bold">{balance.balance.toFixed(8)} BTC</p>
-              <p className="text-gray-600">≈ ${(balance.balance * (price || 0)).toFixed(2)} USD</p>
-            </div>
-            <div>
-              <p className="text-gray-600">未確認餘額</p>
-              <p className="text-xl font-bold">{balance.unconfirmedBalance.toFixed(8)} BTC</p>
-            </div>
-            <div>
-              <p className="text-gray-600">總收到</p>
-              <p className="text-xl font-bold">{balance.totalReceived.toFixed(8)} BTC</p>
-            </div>
-            <div>
-              <p className="text-gray-600">總發送</p>
-              <p className="text-xl font-bold">{balance.totalSent.toFixed(8)} BTC</p>
-            </div>
+          <h2 className="text-xl font-semibold mb-2">WBTC 餘額</h2>
+          <div>
+            <p className="text-xl font-bold">{balance} WBTC</p>
+            <p className="text-gray-600">≈ ${(parseFloat(balance) * (price || 0)).toFixed(2)} USD</p>
           </div>
         </div>
       )}
-      
+
       {/* Transaction History */}
       {transactions.length > 0 && (
         <div className="mb-6">
@@ -115,43 +100,60 @@ export default function WalletPage() {
               <thead>
                 <tr>
                   <th className="py-2 px-4 border-b">交易哈希</th>
+                  <th className="py-2 px-4 border-b">發送方</th>
+                  <th className="py-2 px-4 border-b">接收方</th>
+                  <th className="py-2 px-4 border-b">金額 (WBTC)</th>
                   <th className="py-2 px-4 border-b">時間</th>
-                  <th className="py-2 px-4 border-b">金額 (BTC)</th>
                   <th className="py-2 px-4 border-b">確認數</th>
                 </tr>
               </thead>
               <tbody>
-                {transactions.map((tx) => (
-                  <tr key={tx.hash}>
-                    <td className="py-2 px-4 border-b">
-                      <a
-                        href={`https://www.blockchain.com/btc/tx/${tx.hash}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-blue-500 hover:underline"
-                      >
-                        {tx.hash.substring(0, 10)}...
-                      </a>
-                    </td>
-                    <td className="py-2 px-4 border-b">
-                      {tx.time.toLocaleString()}
-                    </td>
-                    <td className="py-2 px-4 border-b">
-                      <span className={tx.amount >= 0 ? 'text-green-500' : 'text-red-500'}>
-                        {tx.amount >= 0 ? '+' : ''}{tx.amount.toFixed(8)}
-                      </span>
-                    </td>
-                    <td className="py-2 px-4 border-b">
-                      {tx.confirmations}
-                    </td>
-                  </tr>
-                ))}
+                {transactions.map((tx) => {
+                  const isIncoming = tx.to.toLowerCase() === address.toLowerCase();
+                  const date = new Date(tx.timestamp * 1000);
+
+                  return (
+                    <tr key={tx.hash}>
+                      <td className="py-2 px-4 border-b">
+                        <a
+                          href={`https://explorer.kaiachain.io/tx/${tx.hash}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-blue-500 hover:underline"
+                        >
+                          {tx.hash.substring(0, 10)}...
+                        </a>
+                      </td>
+                      <td className="py-2 px-4 border-b">
+                        <span className={isIncoming ? '' : 'font-bold'}>
+                          {tx.from.substring(0, 6)}...{tx.from.substring(tx.from.length - 4)}
+                        </span>
+                      </td>
+                      <td className="py-2 px-4 border-b">
+                        <span className={isIncoming ? 'font-bold' : ''}>
+                          {tx.to.substring(0, 6)}...{tx.to.substring(tx.to.length - 4)}
+                        </span>
+                      </td>
+                      <td className="py-2 px-4 border-b">
+                        <span className={isIncoming ? 'text-green-500' : 'text-red-500'}>
+                          {isIncoming ? '+' : '-'}{tx.value}
+                        </span>
+                      </td>
+                      <td className="py-2 px-4 border-b">
+                        {date.toLocaleString()}
+                      </td>
+                      <td className="py-2 px-4 border-b">
+                        {tx.confirmations}
+                      </td>
+                    </tr>
+                  );
+                })}
               </tbody>
             </table>
           </div>
         </div>
       )}
-      
+
       {/* Error Message */}
       {error && (
         <div className="p-4 bg-red-100 text-red-700 rounded-lg">
