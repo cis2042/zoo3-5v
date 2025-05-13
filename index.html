@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZOO3 - 區塊鏈獎勵任務平台</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <!-- Header -->
+    <header class="header">
+      <div class="logo-container">
+        <div class="logo">🦁</div>
+        <h1>ZOO3</h1>
+      </div>
+      <p class="tagline">完成任務獲取獎勵</p>
+    </header>
+
+    <main class="main">
+      <div class="card intro-card">
+        <h2>ZOO3 平台演示</h2>
+        <p>這是 ZOO3 平台的 GitHub Pages 演示版本。實際功能需要連接到 Kaia Chain 和 Supabase 後端。</p>
+        <p class="description">
+          ZOO3 是一個區塊鏈獎勵平台，用戶可以通過完成任務獲得代幣獎勵，包括 KAIA、ZOO 和 WBTC (Kaia Chain)。
+        </p>
+      </div>
+
+      <div class="rewards-container">
+        <div class="reward-card">
+          <h3>每日登入獎勵</h3>
+          <p class="reward-amount">+1 KAIA</p>
+          <p class="reward-desc">連續登入 7 天可獲得額外獎勵</p>
+        </div>
+        
+        <div class="reward-card">
+          <h3>任務獎勵</h3>
+          <p class="reward-amount">+5 ZOO</p>
+          <p class="reward-desc">完成各種任務獲得代幣獎勵</p>
+        </div>
+        
+        <div class="reward-card">
+          <h3>推薦獎勵</h3>
+          <p class="reward-amount">+10 ZOO</p>
+          <p class="reward-desc">邀請朋友加入獲得雙方獎勵</p>
+        </div>
+      </div>
+
+      <div class="tabs">
+        <div class="tab-header">
+          <button class="tab-button active" data-tab="wallet">WBTC 錢包演示</button>
+          <button class="tab-button" data-tab="tasks">任務系統演示</button>
+        </div>
+        
+        <div class="tab-content active" id="wallet-tab">
+          <div class="card">
+            <h3>WBTC 錢包 (Kaia Chain)</h3>
+            <p>查詢 Kaia Chain 上的 WBTC 餘額和交易歷史</p>
+            
+            <div class="input-group">
+              <label for="address">Kaia Chain 地址</label>
+              <div class="address-input">
+                <input type="text" id="address" placeholder="輸入 Kaia Chain 地址">
+                <button class="search-button">查詢</button>
+              </div>
+            </div>
+            
+            <div class="balance-card">
+              <h4>WBTC 餘額</h4>
+              <p class="balance-amount">0.00000000 WBTC</p>
+              <p class="balance-usd">≈ $0.00 USD</p>
+            </div>
+            
+            <div class="demo-notice">
+              <p>這是演示頁面，實際功能需要連接到 Kaia Chain</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="tab-content" id="tasks-tab">
+          <div class="card">
+            <h3>任務系統演示</h3>
+            <p>完成任務獲取代幣獎勵</p>
+            
+            <div class="tasks-list">
+              <div class="task-item completed">
+                <div class="task-info">
+                  <h4>加入 Discord 社區</h4>
+                  <p>獎勵: 5 ZOO</p>
+                </div>
+                <button class="task-button completed" disabled>已完成</button>
+              </div>
+              
+              <div class="task-item">
+                <div class="task-info">
+                  <h4>關注官方 Twitter</h4>
+                  <p>獎勵: 3 ZOO</p>
+                </div>
+                <button class="task-button">完成任務</button>
+              </div>
+              
+              <div class="task-item">
+                <div class="task-info">
+                  <h4>分享到社交媒體</h4>
+                  <p>獎勵: 10 ZOO</p>
+                </div>
+                <button class="task-button">完成任務</button>
+              </div>
+              
+              <div class="task-item">
+                <div class="task-info">
+                  <h4>完成 KYC 認證</h4>
+                  <p>獎勵: 20 ZOO</p>
+                </div>
+                <button class="task-button">完成任務</button>
+              </div>
+              
+              <div class="task-item">
+                <div class="task-info">
+                  <h4>參與社區投票</h4>
+                  <p>獎勵: 5 ZOO</p>
+                </div>
+                <button class="task-button">完成任務</button>
+              </div>
+            </div>
+            
+            <div class="demo-notice">
+              <p>這是演示頁面，實際功能需要連接到後端</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    
+    <footer class="footer">
+      <p>ZOO3 平台 - GitHub Pages 演示版本</p>
+      <p>
+        <a href="https://github.com/cis2042/zoo3-5v" target="_blank" rel="noopener noreferrer">
+          查看 GitHub 倉庫
+        </a>
+      </p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
