@@ -13,6 +13,7 @@ ZOO3 是一個綜合性的區塊鏈獎勵任務平台，用戶可以通過完成
 - [數據庫架構](#數據庫架構)
 - [核心功能](#核心功能)
 - [開發指南](#開發指南)
+- [比特幣 API 整合指南](#比特幣-api-整合指南)
 - [部署指南](#部署指南)
 
 ## 技術棧
@@ -86,9 +87,16 @@ ZOO3 是一個綜合性的區塊鏈獎勵任務平台，用戶可以通過完成
 項目需要以下環境變數才能正常運行：
 
 ```
+# Supabase 配置
 NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+
+# LINE LIFF 配置
 NEXT_PUBLIC_LIFF_ID=your_line_liff_id
+
+# 比特幣 API 配置 (可選)
+BLOCKCYPHER_API_KEY=your_blockcypher_api_key
+NEXT_PUBLIC_BTC_NETWORK=main  # 可選值: main, test3, test
 ```
 
 ## API 文檔
@@ -803,6 +811,697 @@ npm run dev
 1. 創建 LINE LIFF 應用
 2. 設置回調 URL
 3. 獲取 LIFF ID 並添加到環境變數
+
+## 比特幣 API 整合指南
+
+本節介紹如何在 Next.js 框架中整合比特幣 API，以實現查詢比特幣價格、餘額和交易等功能。
+
+### 1. 選擇比特幣 API 提供商
+
+常用的比特幣 API 提供商包括：
+
+- [Blockchain.com API](https://www.blockchain.com/api)
+- [BlockCypher API](https://www.blockcypher.com/dev/bitcoin/)
+- [Coinbase API](https://developers.coinbase.com/)
+- [BitGo API](https://www.bitgo.com/api/)
+- [Mempool.space API](https://mempool.space/docs/api)
+
+本項目使用 BlockCypher API 作為示例，因為它提供免費的 API 密鑰和豐富的功能。
+
+### 2. 設置環境變數
+
+在 `.env.local` 文件中添加以下環境變數：
+
+```
+# Bitcoin API
+BLOCKCYPHER_API_KEY=your_blockcypher_api_key
+NEXT_PUBLIC_BTC_NETWORK=main  # 可選值: main, test3, test
+```
+
+### 3. 創建 API 客戶端
+
+在 `lib` 目錄下創建 `bitcoin.ts` 文件：
+
+```typescript
+// lib/bitcoin.ts
+import axios from 'axios';
+
+const API_BASE_URL = 'https://api.blockcypher.com/v1/btc';
+const NETWORK = process.env.NEXT_PUBLIC_BTC_NETWORK || 'main';
+const API_KEY = process.env.BLOCKCYPHER_API_KEY;
+
+// 創建 API 客戶端
+const bitcoinClient = axios.create({
+  baseURL: `${API_BASE_URL}/${NETWORK}`,
+  params: {
+    token: API_KEY
+  }
+});
+
+// 獲取比特幣當前價格
+export async function getBitcoinPrice() {
+  try {
+    const response = await axios.get('https://api.coindesk.com/v1/bpi/currentprice.json');
+    return response.data.bpi.USD.rate_float;
+  } catch (error) {
+    console.error('Error fetching Bitcoin price:', error);
+    throw error;
+  }
+}
+
+// 獲取錢包餘額
+export async function getWalletBalance(address: string) {
+  try {
+    const response = await bitcoinClient.get(`/addrs/${address}/balance`);
+    return {
+      balance: response.data.balance / 100000000, // 轉換 Satoshi 到 BTC
+      unconfirmedBalance: response.data.unconfirmed_balance / 100000000,
+      totalReceived: response.data.total_received / 100000000,
+      totalSent: response.data.total_sent / 100000000
+    };
+  } catch (error) {
+    console.error('Error fetching wallet balance:', error);
+    throw error;
+  }
+}
+
+// 獲取交易歷史
+export async function getTransactionHistory(address: string, limit = 10) {
+  try {
+    const response = await bitcoinClient.get(`/addrs/${address}/full`, {
+      params: { limit }
+    });
+    return response.data.txs.map((tx: any) => ({
+      hash: tx.hash,
+      confirmations: tx.confirmations,
+      time: new Date(tx.received),
+      amount: calculateTransactionAmount(tx, address),
+      fee: tx.fees / 100000000
+    }));
+  } catch (error) {
+    console.error('Error fetching transaction history:', error);
+    throw error;
+  }
+}
+
+// 計算交易金額（對於指定地址）
+function calculateTransactionAmount(tx: any, address: string) {
+  let amount = 0;
+
+  // 計算輸入金額
+  tx.inputs.forEach((input: any) => {
+    if (input.addresses && input.addresses.includes(address)) {
+      amount -= input.output_value / 100000000;
+    }
+  });
+
+  // 計算輸出金額
+  tx.outputs.forEach((output: any) => {
+    if (output.addresses && output.addresses.includes(address)) {
+      amount += output.value / 100000000;
+    }
+  });
+
+  return amount;
+}
+
+// 創建新交易
+export async function createTransaction(fromAddress: string, toAddress: string, amount: number, privateKey: string) {
+  try {
+    // 1. 創建新交易
+    const newTx = await bitcoinClient.post('/txs/new', {
+      inputs: [{ addresses: [fromAddress] }],
+      outputs: [{ addresses: [toAddress], value: Math.floor(amount * 100000000) }]
+    });
+
+    // 2. 使用私鑰簽名交易
+    const signedTx = await signTransaction(newTx.data, privateKey);
+
+    // 3. 發送交易
+    const sentTx = await bitcoinClient.post('/txs/send', signedTx);
+
+    return {
+      txHash: sentTx.data.tx.hash,
+      blockHeight: sentTx.data.tx.block_height,
+      confirmations: sentTx.data.tx.confirmations
+    };
+  } catch (error) {
+    console.error('Error creating transaction:', error);
+    throw error;
+  }
+}
+
+// 簽名交易（需要使用比特幣庫，如 bitcoinjs-lib）
+async function signTransaction(txData: any, privateKey: string) {
+  // 注意：實際實現需要使用比特幣庫進行簽名
+  // 這裡僅為示例，實際應用中需要引入 bitcoinjs-lib 等庫
+
+  // 模擬簽名過程
+  txData.pubkeys = [];
+  txData.signatures = [];
+
+  // 在實際應用中，這裡需要使用私鑰對交易進行簽名
+  // const bitcoin = require('bitcoinjs-lib');
+  // const keyPair = bitcoin.ECPair.fromWIF(privateKey);
+  // const tx = bitcoin.Transaction.fromHex(txData.tx.hex);
+  // ...簽名邏輯...
+
+  return txData;
+}
+
+export default {
+  getBitcoinPrice,
+  getWalletBalance,
+  getTransactionHistory,
+  createTransaction
+};
+```
+
+### 4. 創建 Next.js API 路由
+
+在 `app/api/bitcoin` 目錄下創建以下文件：
+
+#### 獲取比特幣價格
+
+```typescript
+// app/api/bitcoin/price/route.ts
+import { NextResponse } from 'next/server';
+import { getBitcoinPrice } from '@/lib/bitcoin';
+
+export async function GET() {
+  try {
+    const price = await getBitcoinPrice();
+    return NextResponse.json({
+      success: true,
+      data: { price }
+    });
+  } catch (error) {
+    console.error('Error in BTC price API:', error);
+    return NextResponse.json(
+      { success: false, error: 'Failed to fetch Bitcoin price' },
+      { status: 500 }
+    );
+  }
+}
+```
+
+#### 獲取錢包餘額
+
+```typescript
+// app/api/bitcoin/balance/route.ts
+import { NextResponse } from 'next/server';
+import { getWalletBalance } from '@/lib/bitcoin';
+import { createRouteHandlerClient } from '@supabase/auth-helpers-nextjs';
+import { cookies } from 'next/headers';
+
+export async function GET(request: Request) {
+  try {
+    // 獲取查詢參數
+    const { searchParams } = new URL(request.url);
+    const address = searchParams.get('address');
+
+    // 檢查地址參數
+    if (!address) {
+      return NextResponse.json(
+        { success: false, error: 'Bitcoin address is required' },
+        { status: 400 }
+      );
+    }
+
+    // 獲取用戶會話（可選，用於權限檢查）
+    const supabase = createRouteHandlerClient({ cookies });
+    const { data: { session } } = await supabase.auth.getSession();
+
+    // 如果需要，可以在這裡進行權限檢查
+
+    // 獲取錢包餘額
+    const balance = await getWalletBalance(address);
+
+    return NextResponse.json({
+      success: true,
+      data: balance
+    });
+  } catch (error) {
+    console.error('Error in BTC balance API:', error);
+    return NextResponse.json(
+      { success: false, error: 'Failed to fetch wallet balance' },
+      { status: 500 }
+    );
+  }
+}
+```
+
+#### 獲取交易歷史
+
+```typescript
+// app/api/bitcoin/transactions/route.ts
+import { NextResponse } from 'next/server';
+import { getTransactionHistory } from '@/lib/bitcoin';
+import { createRouteHandlerClient } from '@supabase/auth-helpers-nextjs';
+import { cookies } from 'next/headers';
+
+export async function GET(request: Request) {
+  try {
+    // 獲取查詢參數
+    const { searchParams } = new URL(request.url);
+    const address = searchParams.get('address');
+    const limit = searchParams.get('limit') ? parseInt(searchParams.get('limit')!) : 10;
+
+    // 檢查地址參數
+    if (!address) {
+      return NextResponse.json(
+        { success: false, error: 'Bitcoin address is required' },
+        { status: 400 }
+      );
+    }
+
+    // 獲取用戶會話（可選，用於權限檢查）
+    const supabase = createRouteHandlerClient({ cookies });
+    const { data: { session } } = await supabase.auth.getSession();
+
+    // 如果需要，可以在這裡進行權限檢查
+
+    // 獲取交易歷史
+    const transactions = await getTransactionHistory(address, limit);
+
+    return NextResponse.json({
+      success: true,
+      data: { transactions }
+    });
+  } catch (error) {
+    console.error('Error in BTC transactions API:', error);
+    return NextResponse.json(
+      { success: false, error: 'Failed to fetch transaction history' },
+      { status: 500 }
+    );
+  }
+}
+```
+
+#### 發送交易
+
+```typescript
+// app/api/bitcoin/send/route.ts
+import { NextResponse } from 'next/server';
+import { createTransaction } from '@/lib/bitcoin';
+import { createRouteHandlerClient } from '@supabase/auth-helpers-nextjs';
+import { cookies } from 'next/headers';
+
+export async function POST(request: Request) {
+  try {
+    // 獲取請求體
+    const body = await request.json();
+    const { fromAddress, toAddress, amount, privateKey } = body;
+
+    // 檢查必要參數
+    if (!fromAddress || !toAddress || !amount || !privateKey) {
+      return NextResponse.json(
+        { success: false, error: 'Missing required parameters' },
+        { status: 400 }
+      );
+    }
+
+    // 獲取用戶會話（用於權限檢查）
+    const supabase = createRouteHandlerClient({ cookies });
+    const { data: { session } } = await supabase.auth.getSession();
+
+    // 檢查用戶是否已登錄
+    if (!session) {
+      return NextResponse.json(
+        { success: false, error: 'Authentication required' },
+        { status: 401 }
+      );
+    }
+
+    // 發送交易
+    const transaction = await createTransaction(fromAddress, toAddress, amount, privateKey);
+
+    return NextResponse.json({
+      success: true,
+      data: transaction
+    });
+  } catch (error) {
+    console.error('Error in BTC send API:', error);
+    return NextResponse.json(
+      { success: false, error: 'Failed to send transaction' },
+      { status: 500 }
+    );
+  }
+}
+```
+
+### 5. 創建 React Hook
+
+在 `hooks` 目錄下創建 `use-bitcoin.ts` 文件：
+
+```typescript
+// hooks/use-bitcoin.ts
+import { useState, useCallback } from 'react';
+
+interface BitcoinBalance {
+  balance: number;
+  unconfirmedBalance: number;
+  totalReceived: number;
+  totalSent: number;
+}
+
+interface BitcoinTransaction {
+  hash: string;
+  confirmations: number;
+  time: Date;
+  amount: number;
+  fee: number;
+}
+
+interface SendTransactionResult {
+  txHash: string;
+  blockHeight: number;
+  confirmations: number;
+}
+
+export function useBitcoin() {
+  const [price, setPrice] = useState<number | null>(null);
+  const [balance, setBalance] = useState<BitcoinBalance | null>(null);
+  const [transactions, setTransactions] = useState<BitcoinTransaction[]>([]);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [error, setError] = useState<string | null>(null);
+
+  // 獲取比特幣價格
+  const fetchPrice = useCallback(async () => {
+    setLoading(true);
+    setError(null);
+
+    try {
+      const response = await fetch('/api/bitcoin/price');
+      const data = await response.json();
+
+      if (!data.success) {
+        throw new Error(data.error);
+      }
+
+      setPrice(data.data.price);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Failed to fetch Bitcoin price');
+    } finally {
+      setLoading(false);
+    }
+  }, []);
+
+  // 獲取錢包餘額
+  const fetchBalance = useCallback(async (address: string) => {
+    setLoading(true);
+    setError(null);
+
+    try {
+      const response = await fetch(`/api/bitcoin/balance?address=${address}`);
+      const data = await response.json();
+
+      if (!data.success) {
+        throw new Error(data.error);
+      }
+
+      setBalance(data.data);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Failed to fetch wallet balance');
+    } finally {
+      setLoading(false);
+    }
+  }, []);
+
+  // 獲取交易歷史
+  const fetchTransactions = useCallback(async (address: string, limit = 10) => {
+    setLoading(true);
+    setError(null);
+
+    try {
+      const response = await fetch(`/api/bitcoin/transactions?address=${address}&limit=${limit}`);
+      const data = await response.json();
+
+      if (!data.success) {
+        throw new Error(data.error);
+      }
+
+      setTransactions(data.data.transactions);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Failed to fetch transaction history');
+    } finally {
+      setLoading(false);
+    }
+  }, []);
+
+  // 發送交易
+  const sendTransaction = useCallback(async (
+    fromAddress: string,
+    toAddress: string,
+    amount: number,
+    privateKey: string
+  ): Promise<SendTransactionResult> => {
+    setLoading(true);
+    setError(null);
+
+    try {
+      const response = await fetch('/api/bitcoin/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          fromAddress,
+          toAddress,
+          amount,
+          privateKey
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!data.success) {
+        throw new Error(data.error);
+      }
+
+      return data.data;
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Failed to send transaction');
+      throw err;
+    } finally {
+      setLoading(false);
+    }
+  }, []);
+
+  return {
+    price,
+    balance,
+    transactions,
+    loading,
+    error,
+    fetchPrice,
+    fetchBalance,
+    fetchTransactions,
+    sendTransaction
+  };
+}
+```
+
+### 6. 使用示例
+
+以下是在 React 組件中使用比特幣 API 的示例：
+
+```tsx
+// app/wallet/page.tsx
+'use client';
+
+import { useState, useEffect } from 'react';
+import { useBitcoin } from '@/hooks/use-bitcoin';
+
+export default function WalletPage() {
+  const [address, setAddress] = useState<string>('');
+  const {
+    price,
+    balance,
+    transactions,
+    loading,
+    error,
+    fetchPrice,
+    fetchBalance,
+    fetchTransactions
+  } = useBitcoin();
+
+  // 在組件加載時獲取比特幣價格
+  useEffect(() => {
+    fetchPrice();
+    // 每分鐘更新一次價格
+    const interval = setInterval(fetchPrice, 60000);
+    return () => clearInterval(interval);
+  }, [fetchPrice]);
+
+  // 處理地址輸入
+  const handleAddressChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setAddress(e.target.value);
+  };
+
+  // 獲取錢包信息
+  const handleFetchWallet = () => {
+    if (address) {
+      fetchBalance(address);
+      fetchTransactions(address);
+    }
+  };
+
+  return (
+    <div className="container mx-auto p-4">
+      <h1 className="text-2xl font-bold mb-4">比特幣錢包</h1>
+
+      {/* 比特幣價格 */}
+      <div className="mb-6 p-4 bg-gray-100 rounded-lg">
+        <h2 className="text-xl font-semibold mb-2">當前比特幣價格</h2>
+        {loading && !price ? (
+          <p>加載中...</p>
+        ) : error ? (
+          <p className="text-red-500">{error}</p>
+        ) : (
+          <p className="text-2xl font-bold">${price?.toLocaleString()} USD</p>
+        )}
+      </div>
+
+      {/* 錢包地址輸入 */}
+      <div className="mb-6">
+        <h2 className="text-xl font-semibold mb-2">查詢錢包</h2>
+        <div className="flex gap-2">
+          <input
+            type="text"
+            value={address}
+            onChange={handleAddressChange}
+            placeholder="輸入比特幣地址"
+            className="flex-1 p-2 border rounded"
+          />
+          <button
+            onClick={handleFetchWallet}
+            disabled={!address || loading}
+            className="px-4 py-2 bg-blue-500 text-white rounded disabled:bg-gray-300"
+          >
+            {loading ? '加載中...' : '查詢'}
+          </button>
+        </div>
+      </div>
+
+      {/* 錢包餘額 */}
+      {balance && (
+        <div className="mb-6 p-4 bg-gray-100 rounded-lg">
+          <h2 className="text-xl font-semibold mb-2">錢包餘額</h2>
+          <div className="grid grid-cols-2 gap-4">
+            <div>
+              <p className="text-gray-600">確認餘額</p>
+              <p className="text-xl font-bold">{balance.balance.toFixed(8)} BTC</p>
+              <p className="text-gray-600">≈ ${(balance.balance * (price || 0)).toFixed(2)} USD</p>
+            </div>
+            <div>
+              <p className="text-gray-600">未確認餘額</p>
+              <p className="text-xl font-bold">{balance.unconfirmedBalance.toFixed(8)} BTC</p>
+            </div>
+            <div>
+              <p className="text-gray-600">總收到</p>
+              <p className="text-xl font-bold">{balance.totalReceived.toFixed(8)} BTC</p>
+            </div>
+            <div>
+              <p className="text-gray-600">總發送</p>
+              <p className="text-xl font-bold">{balance.totalSent.toFixed(8)} BTC</p>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* 交易歷史 */}
+      {transactions.length > 0 && (
+        <div className="mb-6">
+          <h2 className="text-xl font-semibold mb-2">交易歷史</h2>
+          <div className="overflow-x-auto">
+            <table className="min-w-full bg-white border">
+              <thead>
+                <tr>
+                  <th className="py-2 px-4 border-b">交易哈希</th>
+                  <th className="py-2 px-4 border-b">時間</th>
+                  <th className="py-2 px-4 border-b">金額 (BTC)</th>
+                  <th className="py-2 px-4 border-b">確認數</th>
+                </tr>
+              </thead>
+              <tbody>
+                {transactions.map((tx) => (
+                  <tr key={tx.hash}>
+                    <td className="py-2 px-4 border-b">
+                      <a
+                        href={`https://www.blockchain.com/btc/tx/${tx.hash}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-500 hover:underline"
+                      >
+                        {tx.hash.substring(0, 10)}...
+                      </a>
+                    </td>
+                    <td className="py-2 px-4 border-b">
+                      {tx.time.toLocaleString()}
+                    </td>
+                    <td className="py-2 px-4 border-b">
+                      <span className={tx.amount >= 0 ? 'text-green-500' : 'text-red-500'}>
+                        {tx.amount >= 0 ? '+' : ''}{tx.amount.toFixed(8)}
+                      </span>
+                    </td>
+                    <td className="py-2 px-4 border-b">
+                      {tx.confirmations}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      )}
+
+      {/* 錯誤信息 */}
+      {error && (
+        <div className="p-4 bg-red-100 text-red-700 rounded-lg">
+          {error}
+        </div>
+      )}
+    </div>
+  );
+}
+```
+
+### 7. 安全注意事項
+
+在實現比特幣 API 時，請注意以下安全事項：
+
+1. **私鑰安全**：
+   - 永遠不要在前端存儲私鑰
+   - 考慮使用硬件錢包或第三方錢包服務
+   - 如果必須處理私鑰，使用加密存儲並在內存中安全處理
+
+2. **API 密鑰保護**：
+   - 將 API 密鑰存儲在環境變數中
+   - 不要在客戶端代碼中暴露 API 密鑰
+   - 使用 API 路由來代理請求，而不是直接從前端調用第三方 API
+
+3. **交易驗證**：
+   - 在發送交易前進行金額和地址驗證
+   - 實現交易確認機制
+   - 考慮實現多重簽名或其他高級安全功能
+
+4. **錯誤處理**：
+   - 不要在錯誤消息中暴露敏感信息
+   - 實現適當的日誌記錄
+   - 為用戶提供有用但安全的錯誤消息
+
+### 8. 測試
+
+在實現比特幣 API 時，強烈建議使用測試網絡進行開發和測試：
+
+1. **使用測試網絡**：
+   - 設置 `NEXT_PUBLIC_BTC_NETWORK=test3` 使用比特幣測試網絡
+   - 從測試網絡水龍頭獲取免費的測試幣：https://coinfaucet.eu/en/btc-testnet/
+
+2. **創建測試用例**：
+   - 為每個 API 端點創建單元測試
+   - 測試各種錯誤情況和邊界條件
 
 ## 部署指南
 
