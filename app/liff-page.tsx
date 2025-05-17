@@ -11,6 +11,9 @@ import { useLiff } from "./liff-provider"
 import { toast } from "@/components/ui/use-toast"
 import { LineConnectButton } from "@/components/line-connect-button"
 
+// Replace with your actual LIFF ID
+const LIFF_ID = "YOUR_LIFF_ID"
+
 export default function LiffPage() {
   const { isLoggedIn, profile, loading } = useLiff()
   const [referralLink, setReferralLink] = useState("")
@@ -25,8 +28,6 @@ export default function LiffPage() {
   }, [profile])
 
   const copyReferralLink = () => {
-    if (!referralLink) return
-    
     navigator.clipboard.writeText(referralLink)
     toast({
       title: "Link copied!",

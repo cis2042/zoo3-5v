@@ -1,11 +1,15 @@
-import { Metadata } from 'next'
-import LiffPageWrapper from './liff-page-wrapper'
+"use client"
 
-export const metadata: Metadata = {
-  title: "ZOO3 - LINE LIFF",
-  description: "ZOO3 LIFF App",
-}
+import { LiffProvider } from "../liff-provider"
+import LiffPage from "../liff-page"
+
+// Replace with your actual LIFF ID
+const LIFF_ID = "YOUR_LIFF_ID"
 
 export default function Page() {
-  return <LiffPageWrapper />
+  return (
+    <LiffProvider liffId={LIFF_ID}>
+      <LiffPage />
+    </LiffProvider>
+  )
 }
