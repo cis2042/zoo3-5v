@@ -13,7 +13,7 @@ importers:
         version: 3.9.1(react-hook-form@7.54.1(react@19.0.0))
       '@line/liff':
         specifier: latest
-        version: 2.26.0
+        version: 2.27.0
       '@radix-ui/react-accordion':
         specifier: 1.2.2
         version: 1.2.2(@types/react-dom@19.0.0)(@types/react@19.0.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -45,8 +45,8 @@ importers:
         specifier: 1.1.4
         version: 1.1.4(@types/react-dom@19.0.0)(@types/react@19.0.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@radix-ui/react-label':
-        specifier: latest
-        version: 2.1.6(@types/react-dom@19.0.0)(@types/react@19.0.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+        specifier: 2.1.1
+        version: 2.1.1(@types/react-dom@19.0.0)(@types/react@19.0.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@radix-ui/react-menubar':
         specifier: 1.1.4
         version: 1.1.4(@types/react-dom@19.0.0)(@types/react@19.0.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -57,11 +57,11 @@ importers:
         specifier: 1.1.4
         version: 1.1.4(@types/react-dom@19.0.0)(@types/react@19.0.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@radix-ui/react-progress':
-        specifier: latest
-        version: 1.1.6(@types/react-dom@19.0.0)(@types/react@19.0.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+        specifier: 1.1.1
+        version: 1.1.1(@types/react-dom@19.0.0)(@types/react@19.0.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@radix-ui/react-radio-group':
-        specifier: latest
-        version: 1.3.6(@types/react-dom@19.0.0)(@types/react@19.0.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+        specifier: 1.2.2
+        version: 1.2.2(@types/react-dom@19.0.0)(@types/react@19.0.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@radix-ui/react-scroll-area':
         specifier: 1.2.2
         version: 1.2.2(@types/react-dom@19.0.0)(@types/react@19.0.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -76,7 +76,7 @@ importers:
         version: 1.2.2(@types/react-dom@19.0.0)(@types/react@19.0.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@radix-ui/react-slot':
         specifier: latest
-        version: 1.2.2(@types/react@19.0.0)(react@19.0.0)
+        version: 1.2.3(@types/react@19.0.0)(react@19.0.0)
       '@radix-ui/react-switch':
         specifier: 1.1.2
         version: 1.1.2(@types/react-dom@19.0.0)(@types/react@19.0.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -97,7 +97,7 @@ importers:
         version: 1.1.6(@types/react-dom@19.0.0)(@types/react@19.0.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       autoprefixer:
         specifier: ^10.4.20
-        version: 10.4.20(postcss@8.0.0)
+        version: 10.4.20(postcss@8.5.3)
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1
@@ -169,8 +169,8 @@ importers:
         specifier: ^19
         version: 19.0.0
       postcss:
-        specifier: ^8
-        version: 8.0.0
+        specifier: ^8.5
+        version: 8.5.3
       tailwindcss:
         specifier: ^3.4.17
         version: 3.4.17
@@ -338,224 +338,229 @@ packages:
   '@jridgewell/trace-mapping@0.3.25':
     resolution: {integrity: sha512-vNk6aEwybGtawWmy/PzwnGDOjCkLWSD2wqvjGGAgOAwCGWySYXfYoxt00IJkTF+8Lb57DwOb3Aa0o9CApepiYQ==}
 
-  '@liff/add-to-home-screen@2.26.0':
-    resolution: {integrity: sha512-Jv6JoWJSGvHJ7DK+6aGnm6csmEvNynIXJoT0+ZSLyGsPit3pVyzf/KKlh+0Jc9zTAPq15OUVCXSFur3xZCFHsw==}
+  '@liff/add-to-home-screen@2.27.0':
+    resolution: {integrity: sha512-eJ49bEtnsth4qz2kEGXByJuFlvWMNMNiu+f9MSna+oWDKaCZsjcqDqq6FLGnmz0z7ccclnMEkEZR64wxCLEPFQ==}
     peerDependencies:
       tslib: ^2.3.0
 
-  '@liff/analytics@2.26.0':
-    resolution: {integrity: sha512-UQNbDx3SDwBwCk1MRkt5jRr+0YQevg/cQ8ADjzEu5nVYIvLzRnAPPp7bEgwrFmAbWQyMFlLRH1g3DRDIkLZirQ==}
+  '@liff/analytics@2.27.0':
+    resolution: {integrity: sha512-Sto/yVOM6V2diKCawdh0YnwJFdHrMLf58sjM3HYlTOo2DO00jPRpMa/VedyBdiki8ty2nfH/3u9k8BVAImftnQ==}
     peerDependencies:
       tslib: ^2.3.0
 
-  '@liff/check-availability@2.26.0':
-    resolution: {integrity: sha512-uh19oe4Tyqzyx8cntY/SbpzDbBWrCuofAgU9s7KVYi5PxNP5HAYYrJOJ8PCwpfKlmiMowdy/LRE9ATr4lJVyyQ==}
+  '@liff/check-availability@2.27.0':
+    resolution: {integrity: sha512-T1UTv6h/whJZXiIzFumuSr8s3aYTHlT5AxC3Rr7uxQ9HDnTGdQqeFIReyqLu86EBgawRgBXQWP29pBRMLSnTLA==}
     peerDependencies:
       tslib: ^2.3.0
 
-  '@liff/close-window@2.26.0':
-    resolution: {integrity: sha512-5d5tT6SA3+cvzGvHhA3wrCrGgmJkyHDveA8+F2rxru9I73jBTlOJlpaJpf9mojIgmtekhvv2hCQ9NqYnDMjuRA==}
+  '@liff/close-window@2.27.0':
+    resolution: {integrity: sha512-1rgtYGoPDksyBV5bFvHvC5Vse5CJp3bGbLaIuc+1JrRFLwwmEAm3ColdPUHcQc95RGR20nRer695e+CYQz2d2w==}
     peerDependencies:
       tslib: ^2.3.0
 
-  '@liff/consts@2.26.0':
-    resolution: {integrity: sha512-YSH3dKdnsLLXv965cpjHjAI8KPI2l+A9PhewG/+hcadvR8eYsTHOxwwYkM6luRz+WBqb8dg+01HfiFzBVkUYkg==}
+  '@liff/consts@2.27.0':
+    resolution: {integrity: sha512-QzL1Z9DWOt2yvntxDwrL7yWgSVEGin0E7uSlZGTGMVrZ68E4s7qW7MxfPuSRO+ScpdpNLyhlOiqHj9FiNzE79g==}
     peerDependencies:
       tslib: ^2.3.0
 
-  '@liff/core@2.26.0':
-    resolution: {integrity: sha512-cNFwQ4FDU4mgc3iVGLNSuug2cElD78aj9cF0hoiHtBPEkiT8JOcLyl+VZGixjKWhKzhcS7YRNm6O+zzuCQOenw==}
+  '@liff/core@2.27.0':
+    resolution: {integrity: sha512-JVxdWiPrhA7Ts9ygORkAA4c9nxyrHZgtH7fPI3T9DZXBtxo3mG/XfDHT9o7xTsOfMVz7GWuwuh7EX+8UYfx48Q==}
     peerDependencies:
       tslib: ^2.3.0
 
-  '@liff/create-shortcut-on-home-screen@2.26.0':
-    resolution: {integrity: sha512-wVKyJ8J3sZP+d0xQ3RshAho+Fct5Dz/VjIAMEYCewY9GUAkA2R4gCLDk2rgMn6wS79zg7Qh0DkbeWa21asAf2w==}
+  '@liff/create-shortcut-on-home-screen@2.27.0':
+    resolution: {integrity: sha512-qNsQGS+eGa8BDX5SOHICi8EzFnC/MMjEZ4SVAw9Ww53V9R0Nq2GxzoBnFFPcWZIJk2j5VxL5L1cKzuzfdXdQng==}
     peerDependencies:
       tslib: ^2.3.0
 
-  '@liff/extensions@2.26.0':
-    resolution: {integrity: sha512-ZMQ/0O8YfDpNy13mMBL+DJpOp27+cpmLQmeGUoaI6n1N9s8zoeb3yg56WuW0ADTH6kCL8/6yIWuKF+inWSnRDw==}
+  '@liff/extensions@2.27.0':
+    resolution: {integrity: sha512-T1GRM65i5Ycp6eytpK9pQZr9jcPGAnCSvYueazDLn1k0zGn1R/xVo4Oi7R6UZZ3NEI4LRL78UqPlN6eDo5yeUw==}
 
-  '@liff/get-advertising-id@2.26.0':
-    resolution: {integrity: sha512-CXOfY+SVebUFl8MbJGZka9nQflgEFRqh/9lJOuMn1+qiAL5eN6he0QQOR/gXfOmzHoKZAQmq09HxFEFRb6rLXQ==}
+  '@liff/get-advertising-id@2.27.0':
+    resolution: {integrity: sha512-0x1NLm1qSFSUyJoZ/fl1IR9ok4D3iJNa44ACkOE+M2+hB7P8fxn5ngqWUjXW38UznTXjPX8UxWdK81rrIp8yyA==}
     peerDependencies:
       tslib: ^2.3.0
 
-  '@liff/get-app-language@2.26.0':
-    resolution: {integrity: sha512-EmOmhasLou/RkrUEB7u1JkEIVbgG2SLBkJEhatfkqfcNmzMMgSZ1KvoTitU8lzR/v1rSEOwn2vNaY7DzwshVfA==}
+  '@liff/get-app-language@2.27.0':
+    resolution: {integrity: sha512-G+1bNefdYyoCDbYeX+bROWJxSSMXp3vSNv2f+nNhj+GBnp8opQ/48EdphL1sVE2F6Ru0VWXrlRfonXmiR7Ifjg==}
     peerDependencies:
       tslib: ^2.3.0
 
-  '@liff/get-friendship@2.26.0':
-    resolution: {integrity: sha512-V3UNnQoRTOmiI5zKh8daYZZnzckb6YCxrZwhHeRxDUJuHX1IDOw/R85Ax5xsxPBn7yJtPJjMNYUb8XXHgh/xmQ==}
+  '@liff/get-friendship@2.27.0':
+    resolution: {integrity: sha512-8YgnCkgNIHf7YWc9WR6Y84m7U8f6vb40Vc0DciPqFv6rWk+jMFkWRVCax8LzQJJgXyt8DxBsORHtluVpZX6NNA==}
     peerDependencies:
       tslib: ^2.3.0
 
-  '@liff/get-language@2.26.0':
-    resolution: {integrity: sha512-vvh0nPuM7eoXPs+SAYGjERpSI44OHkTGg0ROyv1Cc3fTVRdUhc5NdrPjCt4NAwRqbFPG6h4yyAnH9gUBXmu0RA==}
+  '@liff/get-language@2.27.0':
+    resolution: {integrity: sha512-fnkqoiTHiXdEKYLwown8BbvExkk/OgioAvf7ND54+MjwwrWHZsvhUQhYQ93Y9P6E4kjOBa8uQifO3lfG2PYCYA==}
     peerDependencies:
       tslib: ^2.3.0
 
-  '@liff/get-line-version@2.26.0':
-    resolution: {integrity: sha512-O8LuSa4eftVABiArtTp56DWa7iHYn1FpfLnWZOcWanGBwRWN5QdWy9/SyhTSD/x1L68zxBeNewkuBS/BkKr4Cg==}
+  '@liff/get-line-version@2.27.0':
+    resolution: {integrity: sha512-ZYfyzBmcMD06WKdp/7dbIdaEtFJwBlJNBo8EW9FS1OO6sWwT+CtGRzBBkAFUMWAjron7akWYWQzz0wREu9pNng==}
     peerDependencies:
       tslib: ^2.3.0
 
-  '@liff/get-os@2.26.0':
-    resolution: {integrity: sha512-sbBiAwshR5JIxWtVKN5QEDUu+OGX9ALDQFHybhqQ/+9YtI49Jt4sPsB0A7Ck0t8V58qBE2CD09Avk6/ep3GbCw==}
+  '@liff/get-origins@2.27.0':
+    resolution: {integrity: sha512-Lhsd33axbbX6E6AK1gsDlPWgkxKSAb+mPviyw0MGQO++BqoWyh6x3BnNjMC2hAm8G0L5/p9fOzcDv0Opa2hAIw==}
     peerDependencies:
       tslib: ^2.3.0
 
-  '@liff/get-profile@2.26.0':
-    resolution: {integrity: sha512-pNDOay0vHcv5WNlOluyk7wCX5eBpE1TGjOZtUs4ajKLQsnMILh4SbHi+VsAS5MAYNkz2Dkg5/hKOjm26KJjW1w==}
+  '@liff/get-os@2.27.0':
+    resolution: {integrity: sha512-Nzy0IBdywR5ozoAs7vR2CfblKE4Gb7IAztJXubDenbAzCAqTL+vLB65uV9VPubd4uMq00p/5aKbeCy+wLinPYg==}
     peerDependencies:
       tslib: ^2.3.0
 
-  '@liff/get-version@2.26.0':
-    resolution: {integrity: sha512-3OLX6KIuJ3FgAzdyNr1uoOJqpVIkHtQOfvjgj/+CcUu5ztfV/+oPeVjmI58+T1FpBxCt+ldv2g6ENmFXA2rF+w==}
+  '@liff/get-profile@2.27.0':
+    resolution: {integrity: sha512-qSCj7xhpFVVlMyUnBNJjxm0ElPDvg8vomgaZ/uBC0q7FtNNvJma6KLyXXfDHi/Fl84pZBACV6Btcsx3Vs6p52A==}
     peerDependencies:
       tslib: ^2.3.0
 
-  '@liff/hooks@2.26.0':
-    resolution: {integrity: sha512-Gf5Dk4uslohL6pVm4PZ0vxJqJoFfz/WhO0X/SwwZoPvo8nczHjPuZXabAupYGBnPLmYaNrByZqCYT8PzEgqw9g==}
+  '@liff/get-version@2.27.0':
+    resolution: {integrity: sha512-WaS+6CwpnHVanVmJSZ5biUyiFf+/ENWtAXz/MOHEt2h9u5VcbbZoin+2HL5jcSyvcUcONVKaSAhn34LUFKMmLQ==}
     peerDependencies:
       tslib: ^2.3.0
 
-  '@liff/i18n@2.26.0':
-    resolution: {integrity: sha512-SAySPv2wuFONDz9jUqTrKH3flVB989VkdawPeGI60deHmnuL7/VklClpdBrOlTls/JHdQNQODA8lSxL1c/rOVg==}
+  '@liff/hooks@2.27.0':
+    resolution: {integrity: sha512-ApToh0vwzTKH3XXlpxmULFal8m2KwAAofKLOTXGKbWIdHfSfDkW8uQmakYUmjuvolMS5RrrQ+xXaEOHluGIdOQ==}
     peerDependencies:
       tslib: ^2.3.0
 
-  '@liff/iap@2.26.0':
-    resolution: {integrity: sha512-S9a0OXbg8+V8xBcCZ5eFZ+VE13cq5KHNECpVFI+QjG1+rSxU0oZhNE++gvjYsbN5zJJECqMVO42U2vD85DJ3bA==}
+  '@liff/i18n@2.27.0':
+    resolution: {integrity: sha512-m/arsBML0jYWHcv0m6ZC2+atlQIaZlwBaWOWNvJhUm5GjO7VQ2OUAfVjFcVxMEmgNaXU1eSNVLfnxEV8mkKCfA==}
     peerDependencies:
       tslib: ^2.3.0
 
-  '@liff/init@2.26.0':
-    resolution: {integrity: sha512-Ct6CcIbU/O233c6mUbKm7BcCPklSsXxPs/LTifcDgohaxVi/b2plNsa0J1WBQtyY498RH0GzAcC/zW/lLgO+Cg==}
+  '@liff/iap@2.27.0':
+    resolution: {integrity: sha512-hLLcdGHW7w1DqyRpCMnEc9RimNycPHxfNWXFYCZ4EuVXtaauPgYKgKssDBNux+Ub7fmdaXEoaWMNsQngjzlQeA==}
     peerDependencies:
       tslib: ^2.3.0
 
-  '@liff/is-api-available@2.26.0':
-    resolution: {integrity: sha512-SrSE1sjAP/u+j1evFd5ZH21S0kgA3iMt/OlvwiL/zp/4vHG/ju5H6QTYbnZQSKW5QNXX1pq6tInxLMSZ/A0PPA==}
+  '@liff/init@2.27.0':
+    resolution: {integrity: sha512-Ulx1/jSC8MfY7djzPpcH4q5IgcK1z72P+ZdyCgXgSenRZwFaO+OrayPB21TsW9P0zpUz4LJcED5hfE2B8sqF+w==}
     peerDependencies:
       tslib: ^2.3.0
 
-  '@liff/is-in-client@2.26.0':
-    resolution: {integrity: sha512-6GxqyjBHizRFEYdcjO+Uu9o7eg6Mxnd5kOHF5PL8bvvIwXVs4hPFXYoATSjSOdEKzwObGxeN5BvS2NFDOmEO0w==}
+  '@liff/is-api-available@2.27.0':
+    resolution: {integrity: sha512-7NUHMf2GKPnNkHDVEKYCAT0Ypv/mQ+9oVMcFMpPgTbZzM/Z3t/AsNJDrbKMpnmPHnV6ckkcwWdKfwOTFAaGTBw==}
     peerDependencies:
       tslib: ^2.3.0
 
-  '@liff/is-logged-in@2.26.0':
-    resolution: {integrity: sha512-KOhLj5W8g+7WaZAl+HsXE04KNfP33skqGZxxS5wSc9EUgVyZ2cJEcMb+zqKFGun7uV6Y1D65gsDL8pa4+fvT4A==}
+  '@liff/is-in-client@2.27.0':
+    resolution: {integrity: sha512-ViccJlwLT9cEnN06JsWHX6C32UpMhnSjKTWQPWFI2CHw/DLEzNC9N+bDG4D2uNVv5TaMszqUF49WkPsPTdPW0Q==}
     peerDependencies:
       tslib: ^2.3.0
 
-  '@liff/is-sub-window@2.26.0':
-    resolution: {integrity: sha512-ZsLYhE1cSnPTHDUKGrvJy5/5FNv4QEVqkmocHTGHntG3ciuNueFZ6Ho2F6eH+bmT3aIIKjiw8PO8r3T3NI6bYQ==}
+  '@liff/is-logged-in@2.27.0':
+    resolution: {integrity: sha512-IGocYr/8wR43ElV42Q9uukE/VHsu4oClsx04MvAyYBNR2BrZhkQ8+HP5TfyF78ozGXuDv9V/benkdHCgcYl0hQ==}
     peerDependencies:
       tslib: ^2.3.0
 
-  '@liff/liff-types@2.26.0':
-    resolution: {integrity: sha512-5n3FuEdnRq+nwc3fnIgjopvWf3911jFxbDkyzi7luaYJ2IlptE5HHkovgxqavJfCgux+cJeQ59SQyE1cVadOwA==}
+  '@liff/is-sub-window@2.27.0':
+    resolution: {integrity: sha512-7uTUtHNMygIKNp8llq6YPOFYNRRh0rjLzz51zzOpwtBdwMGSv9dXNM8HvZl/BMu+xIp3ALLlQsBjc+xIRErtUA==}
     peerDependencies:
       tslib: ^2.3.0
 
-  '@liff/logger@2.26.0':
-    resolution: {integrity: sha512-vZk8dY1LXJbDT7pFv+F7nGCs7r2WmbNX54nobGEA6ljWJAYXxA+9HSMju89ttF5Ygexs/1/KjDg/IQXjMKJ2Xg==}
+  '@liff/liff-types@2.27.0':
+    resolution: {integrity: sha512-odkTcVWQjio2c5YuOl9y1Nzds2MIff0nIkrvy8G1u0++kebDpd6ygPE/fHlOFDQ6cxg8jmHg8KIOaAlDhryqFA==}
     peerDependencies:
       tslib: ^2.3.0
 
-  '@liff/login@2.26.0':
-    resolution: {integrity: sha512-y9Ma1vBy2dJ4l/3aDviHBFJP6sclBz9IXbYC/fYfT8feGZ8JUvoMc4WXVsOKPxwOYRETmzAF1eQiydSkVdfR/A==}
+  '@liff/logger@2.27.0':
+    resolution: {integrity: sha512-hnHdYExqRE17O8d2Dyz5ZfuTI90PTjY42iB3tC1NJYVnJD4y+iQE91I1HoV7D0OMWlvwvDwkrTp0PjoDvYn5ag==}
     peerDependencies:
       tslib: ^2.3.0
 
-  '@liff/logout@2.26.0':
-    resolution: {integrity: sha512-Hkw3rfMcntpB4H73Kg8kQXEskhlL66EvoNhSXQknl5OCM1KT9cJfx3zAQkcL+U2O+GABZ8EAIgllj9/F2/p+1w==}
+  '@liff/login@2.27.0':
+    resolution: {integrity: sha512-F0rk/lQBDbBb+3efIQjulW9MZPND9bGWgo1TEH4QrJdrCdZMvdMG2zccRlY420xBIrX2GkJI1e/KkLtIVNubPw==}
     peerDependencies:
       tslib: ^2.3.0
 
-  '@liff/message-bus@2.26.0':
-    resolution: {integrity: sha512-SDbQJP/lm/KKn4wTGrkpGwqgpMVN1glAX4NltF47EwRgnSioaaIt5O38IL1fVJaJwenaOdhiWAKFW1qb7u/N7Q==}
+  '@liff/logout@2.27.0':
+    resolution: {integrity: sha512-iXrXyD+f43kqFw8rSxQ8W4+dL+Lsz6ndyI3Dv79/GkFmFCkoPVP7ZljLeiQi9wMrfllZ1kFut1dyyHZdMPiSAQ==}
     peerDependencies:
       tslib: ^2.3.0
 
-  '@liff/native-bridge@2.26.0':
-    resolution: {integrity: sha512-Hqjc7tZdiWgeQUffa47wwJPHCvV1VChL5J996qVapDJQ7EYaKboemJCVw7UJPJKGawUvDUwiVXrDG59iq9SwBA==}
+  '@liff/message-bus@2.27.0':
+    resolution: {integrity: sha512-PlV6wR5xFJXnWtge8FpnullupK92gt34idgl1cZnrrX8DeeixqpBIP7bquvp3PtOMVI0fzKaGCpyTDeOi/VonQ==}
     peerDependencies:
       tslib: ^2.3.0
 
-  '@liff/open-window@2.26.0':
-    resolution: {integrity: sha512-u8euHJg2tzG7od+FNvQ/150wJFVAp3FAaATO4EZoObvxlJmApuL+pcPIapiV96UTtLzDJd1t9KmlHMK90ErSiQ==}
+  '@liff/native-bridge@2.27.0':
+    resolution: {integrity: sha512-CLiq3LmdVY2ikdyLHjQ5SIxy2po8IiC2z9uIWIxbG3FqNq8WQLpqtyh39CwKdXvixG3mbltqUfjrtkp6P5hDlg==}
     peerDependencies:
       tslib: ^2.3.0
 
-  '@liff/permanent-link@2.26.0':
-    resolution: {integrity: sha512-W1BdcnXMUPsk1HwULD1D+9L9HWnOqKp/tPL3I/uI/xY6VXgihSE2UBVEpKOGHD3qyYVMss9wj4NZr2jZle4SKg==}
+  '@liff/open-window@2.27.0':
+    resolution: {integrity: sha512-OFRL0UnxDdTBNg+lBA6/pa2fx2Exflf7lWkxV6w+0bQ4SeukHHocOVt5MsKgsWQB/gqv9vkhORCLy6a9X4Srgg==}
     peerDependencies:
       tslib: ^2.3.0
 
-  '@liff/permission@2.26.0':
-    resolution: {integrity: sha512-xQNrib0cdxgCBM1veINJHnp1+3Ianj72WB2JSJKlYQr/0j2dsK8T2xv/c9vPBic+uiRLH+ogjGKgt2elc3bJ/w==}
+  '@liff/permanent-link@2.27.0':
+    resolution: {integrity: sha512-2LsZbfaYusE6W8NmwqOeuBeZbcEYedzbOVUmuaEsRosf5I+qh7xRbAfe5yJG8EJf/S5jtv9zdlPE65i/QgPizg==}
     peerDependencies:
       tslib: ^2.3.0
 
-  '@liff/ready@2.26.0':
-    resolution: {integrity: sha512-N7xpVCwHqj9yiX8jXx0CqlLX983UB1sQsXGM9HecPChHxN1fWyYoNl7dXUk47HOKKBk3/Ac1QiLd4mARhfz4eA==}
+  '@liff/permission@2.27.0':
+    resolution: {integrity: sha512-LoNf60+rI90hlRmHu700NPKGxEeToCRabWT/s70yRg4uvv5V+nTBaHpswOQsGI9HqIeYWhxq+oqo/hxqcMLrwA==}
     peerDependencies:
       tslib: ^2.3.0
 
-  '@liff/scan-code-v2@2.26.0':
-    resolution: {integrity: sha512-jtED8cTpyUtWpgyjoad7hUpFdDLNwb/onYUJJToPLHKuRdCQXQLcuk0tpNZZRsXsA7wLgib4jqCJ8tJ4MlRZEg==}
+  '@liff/ready@2.27.0':
+    resolution: {integrity: sha512-feCkpaQNSqTZdlFCIWf49uILdpsf402nle+do+h+QLGza/k6WbBbb2HuzJawBUsAQINyObriYP0DFHssgzJRaw==}
     peerDependencies:
       tslib: ^2.3.0
 
-  '@liff/scan-code@2.26.0':
-    resolution: {integrity: sha512-+IhL6vANl/ulFR8afed4EJeHNbOIj1GT05Wt3Uwfrbhqz+3hGB3wBjEyFoa+MpBBGT2KqVAp8brokGzbg3u1gQ==}
+  '@liff/scan-code-v2@2.27.0':
+    resolution: {integrity: sha512-8/3LDj3EWRaH2m/GLoiNsCWbznQO2PN2zfKlwfvlPIh4ThwUlLDOV03hqyx4+uxAzjyHsXxwe6rhnDia4kGrXw==}
     peerDependencies:
       tslib: ^2.3.0
 
-  '@liff/send-messages@2.26.0':
-    resolution: {integrity: sha512-loQ2k9uPE57plisDWRvN1+Nsq7PmoMMLcn8Ue0rrY2SaVlJ261oy66QWV6vUdj4hnR4njU8c5kdRC1+LnhzoEg==}
+  '@liff/scan-code@2.27.0':
+    resolution: {integrity: sha512-C11ZQjzN3CrNh4PGmc54O768OUFhMsEYaRVhti5cEBZoJkuuyyiofHa8eZ0Qhsp/TBTRdwCBm1rwEpdVIuUj/A==}
     peerDependencies:
       tslib: ^2.3.0
 
-  '@liff/server-api@2.26.0':
-    resolution: {integrity: sha512-/H3no/DrL7K/h9FRXeEezdOVl+E0Y9Z2DNm0+32KzOtLqZJSRchxfr5+5K9yBRRnl8VlvmCDXsiP2vBy+cPclQ==}
+  '@liff/send-messages@2.27.0':
+    resolution: {integrity: sha512-aBJepTwc21Qz0REoJHqI9Ta/aI4TCm4QuXE6aXW9UXgHMJ0UKTR92kE489GIxTz1mfo7BveQdZd5uYnhneGTZg==}
     peerDependencies:
       tslib: ^2.3.0
 
-  '@liff/share-target-picker@2.26.0':
-    resolution: {integrity: sha512-CvErC5rnzqY5zO9EaO30DIsBmpDVeYkZoy38lEbhlOuvis+JtcBUhk/tkR9gsUPlLPgq+LzauodrxGjuSBVA4A==}
+  '@liff/server-api@2.27.0':
+    resolution: {integrity: sha512-5MF3gZYBpWCfhlXDuEqJHzF9AMhopGU51jiy/hujd3VLEU2y7exEurHz59rMKifoLGSIrMgZufV8Pl45MOJ9xg==}
     peerDependencies:
       tslib: ^2.3.0
 
-  '@liff/store@2.26.0':
-    resolution: {integrity: sha512-mKqQnol0T1hwhYWhV06+gqt3GuxGHeZboRFEh2eTrNVzt7CAkW07ZFI7mXSpXgAQ1626pirA0ft8H/eAg+avgA==}
+  '@liff/share-target-picker@2.27.0':
+    resolution: {integrity: sha512-rcTPThHvvngCGk9Bh0WHDMliA5H2fmLqBI5kA4SuAYXs7mxRwcnSIIYS2RAkfR7IQBzaNiKUTmv5xuk4F+2UjQ==}
     peerDependencies:
       tslib: ^2.3.0
 
-  '@liff/sub-window@2.26.0':
-    resolution: {integrity: sha512-/bbuStCAeHPofz9r3r1C0w7hDCGW59Dd3xeNDhQHVUw4gbA8yjj6NvN2WY+LZ3HFVec2nujgnWF01dojyo9yMQ==}
+  '@liff/store@2.27.0':
+    resolution: {integrity: sha512-GQWov6Rq0m4Hw3J+/nxOp4TfR9K4SAoFsPmj8Lj//qBTllkP3+4uLbhQfiisN4JwD+hC2V/8H+bIan2zu9ccWg==}
     peerDependencies:
       tslib: ^2.3.0
 
-  '@liff/types@2.26.0':
-    resolution: {integrity: sha512-onwzRpf93/tFXyZtZza+qpsedusNcYCwbrJKeUAsY+RiVT9bDixgzrmh8nteAXpga0yku3ctIVPJvYhrTTbTsg==}
-
-  '@liff/use@2.26.0':
-    resolution: {integrity: sha512-tQjY6m6JoCMciP3ZNZo/34wL7klGZoupSoeJPvdQ4gbOSVwhWARWA7Qgun3N0Ddjn1e9K7oBDmvd4vo0zUU/yQ==}
+  '@liff/sub-window@2.27.0':
+    resolution: {integrity: sha512-HRsNTrXBrjjq/uMYskL7MzIjiGfdjQ8f2euc/v4ZIVLWgkPd1r3+GvBnKVfEDftoxOTfpsCk6QQpCMKbIHjJNg==}
     peerDependencies:
       tslib: ^2.3.0
 
-  '@liff/util@2.26.0':
-    resolution: {integrity: sha512-8JR7RcF1xSMtt4j324XSViZenToITIqq7+IKM86qY1CW/R2CfJTJ5XxeyHObGM4/9XpDsm9gc2kdvHMtnw/jdw==}
+  '@liff/types@2.27.0':
+    resolution: {integrity: sha512-xQIH81ab815CYzxFdMO6Jgj2vYwdEvyKNLkVg8+juid4IWgCLgfmp5oL0su+U5TLCQXPS67ObrqV5HqUDGxIwQ==}
+
+  '@liff/use@2.27.0':
+    resolution: {integrity: sha512-J3PTuBGW2vTbk30ZJLNDiUoM2p7Ep97ZHPRbgy0dLHyRS7FKOFyKC0yXCss749VyQyDyh8f5i5GnxsNg3N95pA==}
     peerDependencies:
       tslib: ^2.3.0
 
-  '@liff/window-postmessage@2.26.0':
-    resolution: {integrity: sha512-bXdzwTd6Rdm8WR9e7MKqwxMSg+XAqXsL05CAl/GV6e2z2F4UU+bWYqWumRG6ChGlq+tbP88TDFUDDZC7ESYymA==}
+  '@liff/util@2.27.0':
+    resolution: {integrity: sha512-FLbQ+t6Yey4wCgmmuYhM0lmAPRd9jdsOiqyh48nwf+i9Mtr/xzoLOOIHwE7J8ulWAx6wW+DTOKfDQmEoak2kfg==}
+    peerDependencies:
+      tslib: ^2.3.0
+
+  '@liff/window-postmessage@2.27.0':
+    resolution: {integrity: sha512-3jBLA1o43seqqOyjQV50giGg/HTKcMHL+F/0bPGRBvAtkZii7SwVm2cK1ILtyAvVf0Je5k+0O9GtBM7mlrdtkQ==}
     peerDependencies:
       tslib: ^2.3.0
 
@@ -563,8 +568,8 @@ packages:
     resolution: {integrity: sha512-lm5VlCq9J0zoqa3RfGor2g2hwZOBxK9xsBqWz5s0WZPlGaq+JhXBC/cAPbuEIS+YTpPn+F22K9C6VRYEO8WE9A==}
     engines: {node: '>=18'}
 
-  '@line/liff@2.26.0':
-    resolution: {integrity: sha512-dVHYoLFzRF8lLBpccSTMVqDLiO7osxz47V2qkvaW5rT84gifFqChEvwhYBbDIwEq3PERIpd5IARMqvCut7+SjA==}
+  '@line/liff@2.27.0':
+    resolution: {integrity: sha512-Z7EK9e4sRHBnvU6w6sIg1hpwjFx2Uy8e5zIVA9tY1WWzrNRrp2G/Z/6pi2tmhd+iehNP4x0O4jZ71wB3iiDiYQ==}
 
   '@next/env@15.2.4':
     resolution: {integrity: sha512-+SFtMgoiYP3WoSswuNmxJOCwi06TdWE733D+WPjpXIe4LXGULwEaofiiAy6kbS0+XjM5xF5n3lKuBwN2SnqD9g==}
@@ -638,9 +643,6 @@ packages:
 
   '@radix-ui/primitive@1.1.1':
     resolution: {integrity: sha512-SJ31y+Q/zAyShtXJc8x83i9TYdbAfHZ++tUZnvjJJqFjzsdUnKsxPL6IEtBlxKkU7yzer//GQtZSV4GbldL3YA==}
-
-  '@radix-ui/primitive@1.1.2':
-    resolution: {integrity: sha512-XnbHrrprsNqZKQhStrSwgRUQzoCI1glLzdw79xiZPoofhGICeZRSQ3dIxAKH1gb3OHfNf4d6f+vAv3kil2eggA==}
 
   '@radix-ui/react-accordion@1.2.2':
     resolution: {integrity: sha512-b1oh54x4DMCdGsB4/7ahiSrViXxaBwRPotiZNnYXjLha9vfuURSAZErki6qjDoSIV0eXx5v57XnTGVtGwnfp2g==}
@@ -746,19 +748,6 @@ packages:
       '@types/react-dom':
         optional: true
 
-  '@radix-ui/react-collection@1.1.6':
-    resolution: {integrity: sha512-PbhRFK4lIEw9ADonj48tiYWzkllz81TM7KVYyyMMw2cwHO7D5h4XKEblL8NlaRisTK3QTe6tBEhDccFUryxHBQ==}
-    peerDependencies:
-      '@types/react': '*'
-      '@types/react-dom': '*'
-      react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
-      react-dom: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
-    peerDependenciesMeta:
-      '@types/react':
-        optional: true
-      '@types/react-dom':
-        optional: true
-
   '@radix-ui/react-compose-refs@1.1.1':
     resolution: {integrity: sha512-Y9VzoRDSJtgFMUCoiZBDVo084VQ5hfpXxVE+NgkdNsjiDBByiImMZKKhxMwCbdHvhlENG6a833CbFkOQvTricw==}
     peerDependencies:
@@ -799,15 +788,6 @@ packages:
       '@types/react':
         optional: true
 
-  '@radix-ui/react-context@1.1.2':
-    resolution: {integrity: sha512-jCi/QKUM2r1Ju5a3J64TH2A5SpKAgh0LpknyqdQ4m6DCV0xJ2HG1xARRwNGPQfi1SLdLWZ1OJz6F4OMBBNiGJA==}
-    peerDependencies:
-      '@types/react': '*'
-      react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
-    peerDependenciesMeta:
-      '@types/react':
-        optional: true
-
   '@radix-ui/react-dialog@1.1.4':
     resolution: {integrity: sha512-Ur7EV1IwQGCyaAuyDRiOLA5JIUZxELJljF+MbM/2NC0BYwfuRrbpS30BiQBJrVruscgUkieKkqXYDOoByaxIoA==}
     peerDependencies:
@@ -823,15 +803,6 @@ packages:
 
   '@radix-ui/react-direction@1.1.0':
     resolution: {integrity: sha512-BUuBvgThEiAXh2DWu93XsT+a3aWrGqolGlqqw5VU1kG7p/ZH2cuDlM1sRLNnY3QcBS69UIz2mcKhMxDsdewhjg==}
-    peerDependencies:
-      '@types/react': '*'
-      react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
-    peerDependenciesMeta:
-      '@types/react':
-        optional: true
-
-  '@radix-ui/react-direction@1.1.1':
-    resolution: {integrity: sha512-1UEWRX6jnOA2y4H5WczZ44gOOjTEmlqv1uNW4GAJEO5+bauCBhv8snY65Iw5/VOS/ghKN9gr2KjnLKxrsvoMVw==}
     peerDependencies:
       '@types/react': '*'
       react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
@@ -918,8 +889,8 @@ packages:
       '@types/react':
         optional: true
 
-  '@radix-ui/react-label@2.1.6':
-    resolution: {integrity: sha512-S/hv1mTlgcPX2gCTJrWuTjSXf7ER3Zf7zWGtOprxhIIY93Qin3n5VgNA0Ez9AgrK/lEtlYgzLd4f5x6AVar4Yw==}
+  '@radix-ui/react-label@2.1.1':
+    resolution: {integrity: sha512-UUw5E4e/2+4kFMH7+YxORXGWggtY6sM8WIwh5RZchhLuUg2H1hc98Py+pr8HMz6rdaYrK2t296ZEjYLOCO5uUw==}
     peerDependencies:
       '@types/react': '*'
       '@types/react-dom': '*'
@@ -1022,19 +993,6 @@ packages:
       '@types/react-dom':
         optional: true
 
-  '@radix-ui/react-presence@1.1.4':
-    resolution: {integrity: sha512-ueDqRbdc4/bkaQT3GIpLQssRlFgWaL/U2z/S31qRwwLWoxHLgry3SIfCwhxeQNbirEUXFa+lq3RL3oBYXtcmIA==}
-    peerDependencies:
-      '@types/react': '*'
-      '@types/react-dom': '*'
-      react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
-      react-dom: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
-    peerDependenciesMeta:
-      '@types/react':
-        optional: true
-      '@types/react-dom':
-        optional: true
-
   '@radix-ui/react-primitive@2.0.1':
     resolution: {integrity: sha512-sHCWTtxwNn3L3fH8qAfnF3WbUZycW93SM1j3NFDzXBiz8D6F5UTTy8G1+WFEaiCdvCVRJWj6N2R4Xq6HdiHmDg==}
     peerDependencies:
@@ -1061,8 +1019,8 @@ packages:
       '@types/react-dom':
         optional: true
 
-  '@radix-ui/react-progress@1.1.6':
-    resolution: {integrity: sha512-QzN9a36nKk2eZKMf9EBCia35x3TT+SOgZuzQBVIHyRrmYYi73VYBRK3zKwdJ6az/F5IZ6QlacGJBg7zfB85liA==}
+  '@radix-ui/react-progress@1.1.1':
+    resolution: {integrity: sha512-6diOawA84f/eMxFHcWut0aE1C2kyE9dOyCTQOMRR2C/qPiXz/X0SaiA/RLbapQaXUCmy0/hLMf9meSccD1N0pA==}
     peerDependencies:
       '@types/react': '*'
       '@types/react-dom': '*'
@@ -1074,8 +1032,8 @@ packages:
       '@types/react-dom':
         optional: true
 
-  '@radix-ui/react-radio-group@1.3.6':
-    resolution: {integrity: sha512-1tfTAqnYZNVwSpFhCT273nzK8qGBReeYnNTPspCggqk1fvIrfVxJekIuBFidNivzpdiMqDwVGnQvHqXrRPM4Og==}
+  '@radix-ui/react-radio-group@1.2.2':
+    resolution: {integrity: sha512-E0MLLGfOP0l8P/NxgVzfXJ8w3Ch8cdO6UDzJfDChu4EJDy+/WdO5LqpdY8PYnCErkmZH3gZhDL1K7kQ41fAHuQ==}
     peerDependencies:
       '@types/react': '*'
       '@types/react-dom': '*'
@@ -1089,19 +1047,6 @@ packages:
 
   '@radix-ui/react-roving-focus@1.1.1':
     resolution: {integrity: sha512-QE1RoxPGJ/Nm8Qmk0PxP8ojmoaS67i0s7hVssS7KuI2FQoc/uzVlZsqKfQvxPE6D8hICCPHJ4D88zNhT3OOmkw==}
-    peerDependencies:
-      '@types/react': '*'
-      '@types/react-dom': '*'
-      react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
-      react-dom: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
-    peerDependenciesMeta:
-      '@types/react':
-        optional: true
-      '@types/react-dom':
-        optional: true
-
-  '@radix-ui/react-roving-focus@1.1.9':
-    resolution: {integrity: sha512-ZzrIFnMYHHCNqSNCsuN6l7wlewBEq0O0BCSBkabJMFXVO51LRUTq71gLP1UxFvmrXElqmPjA5VX7IqC9VpazAQ==}
     peerDependencies:
       '@types/react': '*'
       '@types/react-dom': '*'
@@ -1176,6 +1121,15 @@ packages:
 
   '@radix-ui/react-slot@1.2.2':
     resolution: {integrity: sha512-y7TBO4xN4Y94FvcWIOIh18fM4R1A8S4q1jhoz4PNzOoHsFcN8pogcFmZrTYAm4F9VRUrWP/Mw7xSKybIeRI+CQ==}
+    peerDependencies:
+      '@types/react': '*'
+      react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+
+  '@radix-ui/react-slot@1.2.3':
+    resolution: {integrity: sha512-aeNmHnBxbi2St0au6VBVC7JXFlhLlOnvIIlePNniyUNAClzmtAUEY8/pBiK3iHjufOlwA+c20/8jngo7xcrg8A==}
     peerDependencies:
       '@types/react': '*'
       react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
@@ -1270,35 +1224,8 @@ packages:
       '@types/react':
         optional: true
 
-  '@radix-ui/react-use-callback-ref@1.1.1':
-    resolution: {integrity: sha512-FkBMwD+qbGQeMu1cOHnuGB6x4yzPjho8ap5WtbEJ26umhgqVXbhekKUQO+hZEL1vU92a3wHwdp0HAcqAUF5iDg==}
-    peerDependencies:
-      '@types/react': '*'
-      react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
-    peerDependenciesMeta:
-      '@types/react':
-        optional: true
-
   '@radix-ui/react-use-controllable-state@1.1.0':
     resolution: {integrity: sha512-MtfMVJiSr2NjzS0Aa90NPTnvTSg6C/JLCV7ma0W6+OMV78vd8OyRpID+Ng9LxzsPbLeuBnWBA1Nq30AtBIDChw==}
-    peerDependencies:
-      '@types/react': '*'
-      react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
-    peerDependenciesMeta:
-      '@types/react':
-        optional: true
-
-  '@radix-ui/react-use-controllable-state@1.2.2':
-    resolution: {integrity: sha512-BjasUjixPFdS+NKkypcyyN5Pmg83Olst0+c6vGov0diwTEo6mgdqVR6hxcEgFuh4QrAs7Rc+9KuGJ9TVCj0Zzg==}
-    peerDependencies:
-      '@types/react': '*'
-      react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
-    peerDependenciesMeta:
-      '@types/react':
-        optional: true
-
-  '@radix-ui/react-use-effect-event@0.0.2':
-    resolution: {integrity: sha512-Qp8WbZOBe+blgpuUT+lw2xheLP8q0oatc9UpmiemEICxGvFLYmHm9QowVZGHtJlGbS6A6yJ3iViad/2cVjnOiA==}
     peerDependencies:
       '@types/react': '*'
       react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
@@ -1342,15 +1269,6 @@ packages:
       '@types/react':
         optional: true
 
-  '@radix-ui/react-use-previous@1.1.1':
-    resolution: {integrity: sha512-2dHfToCj/pzca2Ck724OZ5L0EVrr3eHRNsG/b3xQJLA2hZpVCS99bLAX+hm1IHXDEnzU6by5z/5MIY794/a8NQ==}
-    peerDependencies:
-      '@types/react': '*'
-      react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
-    peerDependenciesMeta:
-      '@types/react':
-        optional: true
-
   '@radix-ui/react-use-rect@1.1.0':
     resolution: {integrity: sha512-0Fmkebhr6PiseyZlYAOtLS+nb7jLmpqTrJyv61Pe68MKYW6OWdRE2kI70TaYY27u7H0lajqM3hSMMLFq18Z7nQ==}
     peerDependencies:
@@ -1362,15 +1280,6 @@ packages:
 
   '@radix-ui/react-use-size@1.1.0':
     resolution: {integrity: sha512-XW3/vWuIXHa+2Uwcc2ABSfcCledmXhhQPlGbfcRXbiUQI5Icjcg19BGCZVKKInYbvUCut/ufbbLLPFC5cbb1hw==}
-    peerDependencies:
-      '@types/react': '*'
-      react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
-    peerDependenciesMeta:
-      '@types/react':
-        optional: true
-
-  '@radix-ui/react-use-size@1.1.1':
-    resolution: {integrity: sha512-ewrXRDTAqAXlkl6t/fkXWNAhFX9I+CkKlw6zjEwk86RSPKwZr3xpBRso655aqYafwtnbpHLj6toFzmd6xdVptQ==}
     peerDependencies:
       '@types/react': '*'
       react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
@@ -1580,9 +1489,6 @@ packages:
   color@4.2.3:
     resolution: {integrity: sha512-1rXeuUUiGGrykh+CeBdu5Ie7OJwinCgQY0bc7GCRxy5xVHy+moaqkpL/jqQq0MtQOeYcrqEz4abc5f0KtU7W4A==}
     engines: {node: '>=12.5.0'}
-
-  colorette@1.4.0:
-    resolution: {integrity: sha512-Y2oEozpomLn7Q3HFP7dpww7AtMJplbM9lGZP6RDfHqmbeRjiwRg4n6VM6j4KLmRke85uWEI7JqF17f3pqdRA0g==}
 
   combined-stream@1.0.8:
     resolution: {integrity: sha512-FQN4MRfuJeHf7cBbBMJFXhKSDq+2kAArBlmRBvcvFE5BB1HZKXtSFASDhdlz9zOYwxh8lDdnvmMOe/+5cdoEdg==}
@@ -1895,15 +1801,8 @@ packages:
     resolution: {integrity: sha512-41Cifkg6e8TylSpdtTpeLVMqvSBEVzTttHvERD741+pnZ8ANv0004MRL43QKPDlK9cGvNp6NZWZUBlbGXYxxng==}
     engines: {node: '>=0.12.0'}
 
-  isarray@1.0.0:
-    resolution: {integrity: sha512-VLghIWNM6ELQzo7zwmcg0NmTVyWKYjvIeM83yjp0wRDTmUnrM678fQbcKBo6n2CJEF0szoG//ytg+TKla89ALQ==}
-
   isexe@2.0.0:
     resolution: {integrity: sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw==}
-
-  isobject@2.1.0:
-    resolution: {integrity: sha512-+OUdGJlgjOBZDfxnDjYYG6zp487z0JGNQq3cYQYg5f5hKR+syHMsaztzGeml/4kGG55CSpKSpWTY+jYGgsHLgA==}
-    engines: {node: '>=0.10.0'}
 
   jackspeak@3.4.3:
     resolution: {integrity: sha512-OGlZQpz2yfahA/Rd1Y8Cd9SIEsqvXkLVoSw/cgwhnhFMDbsQFeZYoJJ7bIZBS9BcamUW96asq/npPWugM+RQBw==}
@@ -1918,9 +1817,6 @@ packages:
   lilconfig@3.1.3:
     resolution: {integrity: sha512-/vlFKAoH5Cgt3Ie+JLhRbwOsCQePABiU3tJ1egGvyQ+33R/vcwM2Zl2QR/LzjsBeItPt3oSVXapn+m4nQDvpzw==}
     engines: {node: '>=14'}
-
-  line-column@1.0.2:
-    resolution: {integrity: sha512-Ktrjk5noGYlHsVnYWh62FLVs4hTb8A3e+vucNZMgPeAOITdshMSgv4cCZQeRDjm7+goqmo6+liZwTXo+U3sVww==}
 
   lines-and-columns@1.2.4:
     resolution: {integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==}
@@ -2106,10 +2002,6 @@ packages:
 
   postcss-value-parser@4.2.0:
     resolution: {integrity: sha512-1NNCs6uurfkVbeXG4S8JFT9t19m45ICnif8zWLd5oPSZ50QnwMfK+H3jv408d4jw/7Bttv5axS5IiHoLaVNHeQ==}
-
-  postcss@8.0.0:
-    resolution: {integrity: sha512-BriaW5AeZHfyuuKhK3Z6yRDKI6NR2TdRWyZcj3+Pk2nczQsMBqavggAzTledsbyexPthW3nFA6XfgCWjZqmVPA==}
-    engines: {node: ^10 || ^12 || >=14}
 
   postcss@8.4.31:
     resolution: {integrity: sha512-PS08Iboia9mts/2ygV3eLpY5ghnUcfLV/EXTOW1E2qYxJKGGBUtNjN76FYHnMs36RmARn41bC0AZmn+rR0OVpQ==}
@@ -2312,10 +2204,6 @@ packages:
 
   source-map-js@1.2.1:
     resolution: {integrity: sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==}
-    engines: {node: '>=0.10.0'}
-
-  source-map@0.6.1:
-    resolution: {integrity: sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==}
     engines: {node: '>=0.10.0'}
 
   statuses@2.0.1:
@@ -2634,441 +2522,447 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.0
 
-  '@liff/add-to-home-screen@2.26.0(tslib@2.8.1)':
+  '@liff/add-to-home-screen@2.27.0(tslib@2.8.1)':
     dependencies:
-      '@liff/consts': 2.26.0(tslib@2.8.1)
-      '@liff/open-window': 2.26.0(tslib@2.8.1)
-      '@liff/types': 2.26.0
-      '@liff/util': 2.26.0(tslib@2.8.1)
+      '@liff/consts': 2.27.0(tslib@2.8.1)
+      '@liff/open-window': 2.27.0(tslib@2.8.1)
+      '@liff/types': 2.27.0
+      '@liff/util': 2.27.0(tslib@2.8.1)
       tslib: 2.8.1
 
-  '@liff/analytics@2.26.0(tslib@2.8.1)':
+  '@liff/analytics@2.27.0(tslib@2.8.1)':
     dependencies:
-      '@liff/consts': 2.26.0(tslib@2.8.1)
-      '@liff/core': 2.26.0(tslib@2.8.1)
-      '@liff/get-profile': 2.26.0(tslib@2.8.1)
-      '@liff/get-version': 2.26.0(tslib@2.8.1)
-      '@liff/is-logged-in': 2.26.0(tslib@2.8.1)
-      '@liff/logger': 2.26.0(tslib@2.8.1)
-      '@liff/store': 2.26.0(tslib@2.8.1)
-      '@liff/types': 2.26.0
-      '@liff/use': 2.26.0(tslib@2.8.1)
-      '@liff/util': 2.26.0(tslib@2.8.1)
+      '@liff/consts': 2.27.0(tslib@2.8.1)
+      '@liff/core': 2.27.0(tslib@2.8.1)
+      '@liff/get-profile': 2.27.0(tslib@2.8.1)
+      '@liff/get-version': 2.27.0(tslib@2.8.1)
+      '@liff/is-logged-in': 2.27.0(tslib@2.8.1)
+      '@liff/logger': 2.27.0(tslib@2.8.1)
+      '@liff/store': 2.27.0(tslib@2.8.1)
+      '@liff/types': 2.27.0
+      '@liff/use': 2.27.0(tslib@2.8.1)
+      '@liff/util': 2.27.0(tslib@2.8.1)
       tslib: 2.8.1
 
-  '@liff/check-availability@2.26.0(tslib@2.8.1)':
+  '@liff/check-availability@2.27.0(tslib@2.8.1)':
     dependencies:
-      '@liff/get-version': 2.26.0(tslib@2.8.1)
-      '@liff/is-api-available': 2.26.0(tslib@2.8.1)
-      '@liff/types': 2.26.0
-      '@liff/util': 2.26.0(tslib@2.8.1)
+      '@liff/get-version': 2.27.0(tslib@2.8.1)
+      '@liff/is-api-available': 2.27.0(tslib@2.8.1)
+      '@liff/types': 2.27.0
+      '@liff/util': 2.27.0(tslib@2.8.1)
       tslib: 2.8.1
 
-  '@liff/close-window@2.26.0(tslib@2.8.1)':
+  '@liff/close-window@2.27.0(tslib@2.8.1)':
     dependencies:
-      '@liff/get-line-version': 2.26.0(tslib@2.8.1)
-      '@liff/get-os': 2.26.0(tslib@2.8.1)
-      '@liff/native-bridge': 2.26.0(tslib@2.8.1)
-      '@liff/types': 2.26.0
-      '@liff/use': 2.26.0(tslib@2.8.1)
-      '@liff/util': 2.26.0(tslib@2.8.1)
+      '@liff/get-line-version': 2.27.0(tslib@2.8.1)
+      '@liff/get-os': 2.27.0(tslib@2.8.1)
+      '@liff/native-bridge': 2.27.0(tslib@2.8.1)
+      '@liff/types': 2.27.0
+      '@liff/use': 2.27.0(tslib@2.8.1)
+      '@liff/util': 2.27.0(tslib@2.8.1)
       tslib: 2.8.1
 
-  '@liff/consts@2.26.0(tslib@2.8.1)':
+  '@liff/consts@2.27.0(tslib@2.8.1)':
     dependencies:
       tslib: 2.8.1
 
-  '@liff/core@2.26.0(tslib@2.8.1)':
+  '@liff/core@2.27.0(tslib@2.8.1)':
     dependencies:
-      '@liff/get-version': 2.26.0(tslib@2.8.1)
-      '@liff/init': 2.26.0(tslib@2.8.1)
-      '@liff/native-bridge': 2.26.0(tslib@2.8.1)
-      '@liff/ready': 2.26.0(tslib@2.8.1)
-      '@liff/store': 2.26.0(tslib@2.8.1)
-      '@liff/use': 2.26.0(tslib@2.8.1)
+      '@liff/get-version': 2.27.0(tslib@2.8.1)
+      '@liff/init': 2.27.0(tslib@2.8.1)
+      '@liff/native-bridge': 2.27.0(tslib@2.8.1)
+      '@liff/ready': 2.27.0(tslib@2.8.1)
+      '@liff/store': 2.27.0(tslib@2.8.1)
+      '@liff/use': 2.27.0(tslib@2.8.1)
       tslib: 2.8.1
 
-  '@liff/create-shortcut-on-home-screen@2.26.0(tslib@2.8.1)':
+  '@liff/create-shortcut-on-home-screen@2.27.0(tslib@2.8.1)':
     dependencies:
-      '@liff/consts': 2.26.0(tslib@2.8.1)
-      '@liff/get-os': 2.26.0(tslib@2.8.1)
-      '@liff/is-api-available': 2.26.0(tslib@2.8.1)
-      '@liff/is-in-client': 2.26.0(tslib@2.8.1)
-      '@liff/open-window': 2.26.0(tslib@2.8.1)
-      '@liff/permanent-link': 2.26.0(tslib@2.8.1)
-      '@liff/server-api': 2.26.0(tslib@2.8.1)
-      '@liff/store': 2.26.0(tslib@2.8.1)
-      '@liff/use': 2.26.0(tslib@2.8.1)
-      '@liff/util': 2.26.0(tslib@2.8.1)
+      '@liff/consts': 2.27.0(tslib@2.8.1)
+      '@liff/get-os': 2.27.0(tslib@2.8.1)
+      '@liff/is-api-available': 2.27.0(tslib@2.8.1)
+      '@liff/is-in-client': 2.27.0(tslib@2.8.1)
+      '@liff/open-window': 2.27.0(tslib@2.8.1)
+      '@liff/permanent-link': 2.27.0(tslib@2.8.1)
+      '@liff/server-api': 2.27.0(tslib@2.8.1)
+      '@liff/store': 2.27.0(tslib@2.8.1)
+      '@liff/use': 2.27.0(tslib@2.8.1)
+      '@liff/util': 2.27.0(tslib@2.8.1)
       tslib: 2.8.1
 
-  '@liff/extensions@2.26.0(tslib@2.8.1)':
+  '@liff/extensions@2.27.0(tslib@2.8.1)':
     dependencies:
-      '@liff/add-to-home-screen': 2.26.0(tslib@2.8.1)
-      '@liff/check-availability': 2.26.0(tslib@2.8.1)
-      '@liff/consts': 2.26.0(tslib@2.8.1)
-      '@liff/get-advertising-id': 2.26.0(tslib@2.8.1)
-      '@liff/get-line-version': 2.26.0(tslib@2.8.1)
-      '@liff/get-os': 2.26.0(tslib@2.8.1)
-      '@liff/logger': 2.26.0(tslib@2.8.1)
-      '@liff/scan-code': 2.26.0(tslib@2.8.1)
-      '@liff/store': 2.26.0(tslib@2.8.1)
-      '@liff/types': 2.26.0
-      '@liff/util': 2.26.0(tslib@2.8.1)
+      '@liff/add-to-home-screen': 2.27.0(tslib@2.8.1)
+      '@liff/check-availability': 2.27.0(tslib@2.8.1)
+      '@liff/consts': 2.27.0(tslib@2.8.1)
+      '@liff/get-advertising-id': 2.27.0(tslib@2.8.1)
+      '@liff/get-line-version': 2.27.0(tslib@2.8.1)
+      '@liff/get-os': 2.27.0(tslib@2.8.1)
+      '@liff/logger': 2.27.0(tslib@2.8.1)
+      '@liff/scan-code': 2.27.0(tslib@2.8.1)
+      '@liff/store': 2.27.0(tslib@2.8.1)
+      '@liff/types': 2.27.0
+      '@liff/util': 2.27.0(tslib@2.8.1)
     transitivePeerDependencies:
       - tslib
 
-  '@liff/get-advertising-id@2.26.0(tslib@2.8.1)':
+  '@liff/get-advertising-id@2.27.0(tslib@2.8.1)':
     dependencies:
-      '@liff/types': 2.26.0
+      '@liff/types': 2.27.0
       tslib: 2.8.1
 
-  '@liff/get-app-language@2.26.0(tslib@2.8.1)':
+  '@liff/get-app-language@2.27.0(tslib@2.8.1)':
     dependencies:
-      '@liff/get-line-version': 2.26.0(tslib@2.8.1)
-      '@liff/get-os': 2.26.0(tslib@2.8.1)
-      '@liff/is-in-client': 2.26.0(tslib@2.8.1)
-      '@liff/use': 2.26.0(tslib@2.8.1)
-      '@liff/util': 2.26.0(tslib@2.8.1)
+      '@liff/get-line-version': 2.27.0(tslib@2.8.1)
+      '@liff/get-os': 2.27.0(tslib@2.8.1)
+      '@liff/is-in-client': 2.27.0(tslib@2.8.1)
+      '@liff/use': 2.27.0(tslib@2.8.1)
+      '@liff/util': 2.27.0(tslib@2.8.1)
       tslib: 2.8.1
 
-  '@liff/get-friendship@2.26.0(tslib@2.8.1)':
+  '@liff/get-friendship@2.27.0(tslib@2.8.1)':
     dependencies:
-      '@liff/permission': 2.26.0(tslib@2.8.1)
-      '@liff/server-api': 2.26.0(tslib@2.8.1)
-      '@liff/use': 2.26.0(tslib@2.8.1)
+      '@liff/permission': 2.27.0(tslib@2.8.1)
+      '@liff/server-api': 2.27.0(tslib@2.8.1)
+      '@liff/use': 2.27.0(tslib@2.8.1)
       tslib: 2.8.1
 
-  '@liff/get-language@2.26.0(tslib@2.8.1)':
+  '@liff/get-language@2.27.0(tslib@2.8.1)':
     dependencies:
-      '@liff/use': 2.26.0(tslib@2.8.1)
+      '@liff/use': 2.27.0(tslib@2.8.1)
       tslib: 2.8.1
 
-  '@liff/get-line-version@2.26.0(tslib@2.8.1)':
+  '@liff/get-line-version@2.27.0(tslib@2.8.1)':
     dependencies:
-      '@liff/use': 2.26.0(tslib@2.8.1)
+      '@liff/use': 2.27.0(tslib@2.8.1)
       tslib: 2.8.1
 
-  '@liff/get-os@2.26.0(tslib@2.8.1)':
+  '@liff/get-origins@2.27.0(tslib@2.8.1)':
     dependencies:
-      '@liff/use': 2.26.0(tslib@2.8.1)
+      '@liff/use': 2.27.0(tslib@2.8.1)
       tslib: 2.8.1
 
-  '@liff/get-profile@2.26.0(tslib@2.8.1)':
+  '@liff/get-os@2.27.0(tslib@2.8.1)':
     dependencies:
-      '@liff/permission': 2.26.0(tslib@2.8.1)
-      '@liff/server-api': 2.26.0(tslib@2.8.1)
-      '@liff/use': 2.26.0(tslib@2.8.1)
+      '@liff/use': 2.27.0(tslib@2.8.1)
       tslib: 2.8.1
 
-  '@liff/get-version@2.26.0(tslib@2.8.1)':
+  '@liff/get-profile@2.27.0(tslib@2.8.1)':
     dependencies:
-      '@liff/use': 2.26.0(tslib@2.8.1)
+      '@liff/permission': 2.27.0(tslib@2.8.1)
+      '@liff/server-api': 2.27.0(tslib@2.8.1)
+      '@liff/use': 2.27.0(tslib@2.8.1)
       tslib: 2.8.1
 
-  '@liff/hooks@2.26.0(tslib@2.8.1)':
+  '@liff/get-version@2.27.0(tslib@2.8.1)':
+    dependencies:
+      '@liff/use': 2.27.0(tslib@2.8.1)
+      tslib: 2.8.1
+
+  '@liff/hooks@2.27.0(tslib@2.8.1)':
     dependencies:
       tslib: 2.8.1
 
-  '@liff/i18n@2.26.0(tslib@2.8.1)':
+  '@liff/i18n@2.27.0(tslib@2.8.1)':
     dependencies:
-      '@liff/consts': 2.26.0(tslib@2.8.1)
-      '@liff/server-api': 2.26.0(tslib@2.8.1)
-      '@liff/use': 2.26.0(tslib@2.8.1)
-      '@liff/util': 2.26.0(tslib@2.8.1)
+      '@liff/consts': 2.27.0(tslib@2.8.1)
+      '@liff/server-api': 2.27.0(tslib@2.8.1)
+      '@liff/use': 2.27.0(tslib@2.8.1)
+      '@liff/util': 2.27.0(tslib@2.8.1)
       tslib: 2.8.1
 
-  '@liff/iap@2.26.0(tslib@2.8.1)':
+  '@liff/iap@2.27.0(tslib@2.8.1)':
     dependencies:
-      '@liff/consts': 2.26.0(tslib@2.8.1)
-      '@liff/is-api-available': 2.26.0(tslib@2.8.1)
-      '@liff/native-bridge': 2.26.0(tslib@2.8.1)
-      '@liff/use': 2.26.0(tslib@2.8.1)
-      '@liff/util': 2.26.0(tslib@2.8.1)
+      '@liff/consts': 2.27.0(tslib@2.8.1)
+      '@liff/is-api-available': 2.27.0(tslib@2.8.1)
+      '@liff/native-bridge': 2.27.0(tslib@2.8.1)
+      '@liff/use': 2.27.0(tslib@2.8.1)
+      '@liff/util': 2.27.0(tslib@2.8.1)
       tslib: 2.8.1
 
-  '@liff/init@2.26.0(tslib@2.8.1)':
+  '@liff/init@2.27.0(tslib@2.8.1)':
     dependencies:
-      '@liff/check-availability': 2.26.0(tslib@2.8.1)
-      '@liff/close-window': 2.26.0(tslib@2.8.1)
-      '@liff/consts': 2.26.0(tslib@2.8.1)
-      '@liff/extensions': 2.26.0(tslib@2.8.1)
-      '@liff/get-line-version': 2.26.0(tslib@2.8.1)
-      '@liff/get-os': 2.26.0(tslib@2.8.1)
-      '@liff/hooks': 2.26.0(tslib@2.8.1)
-      '@liff/i18n': 2.26.0(tslib@2.8.1)
-      '@liff/is-api-available': 2.26.0(tslib@2.8.1)
-      '@liff/is-in-client': 2.26.0(tslib@2.8.1)
-      '@liff/is-logged-in': 2.26.0(tslib@2.8.1)
-      '@liff/is-sub-window': 2.26.0(tslib@2.8.1)
-      '@liff/logger': 2.26.0(tslib@2.8.1)
-      '@liff/login': 2.26.0(tslib@2.8.1)
-      '@liff/logout': 2.26.0(tslib@2.8.1)
-      '@liff/message-bus': 2.26.0(tslib@2.8.1)
-      '@liff/native-bridge': 2.26.0(tslib@2.8.1)
-      '@liff/ready': 2.26.0(tslib@2.8.1)
-      '@liff/server-api': 2.26.0(tslib@2.8.1)
-      '@liff/store': 2.26.0(tslib@2.8.1)
-      '@liff/sub-window': 2.26.0(tslib@2.8.1)
-      '@liff/types': 2.26.0
-      '@liff/use': 2.26.0(tslib@2.8.1)
-      '@liff/util': 2.26.0(tslib@2.8.1)
+      '@liff/check-availability': 2.27.0(tslib@2.8.1)
+      '@liff/close-window': 2.27.0(tslib@2.8.1)
+      '@liff/consts': 2.27.0(tslib@2.8.1)
+      '@liff/extensions': 2.27.0(tslib@2.8.1)
+      '@liff/get-line-version': 2.27.0(tslib@2.8.1)
+      '@liff/get-os': 2.27.0(tslib@2.8.1)
+      '@liff/hooks': 2.27.0(tslib@2.8.1)
+      '@liff/i18n': 2.27.0(tslib@2.8.1)
+      '@liff/is-api-available': 2.27.0(tslib@2.8.1)
+      '@liff/is-in-client': 2.27.0(tslib@2.8.1)
+      '@liff/is-logged-in': 2.27.0(tslib@2.8.1)
+      '@liff/is-sub-window': 2.27.0(tslib@2.8.1)
+      '@liff/logger': 2.27.0(tslib@2.8.1)
+      '@liff/login': 2.27.0(tslib@2.8.1)
+      '@liff/logout': 2.27.0(tslib@2.8.1)
+      '@liff/message-bus': 2.27.0(tslib@2.8.1)
+      '@liff/native-bridge': 2.27.0(tslib@2.8.1)
+      '@liff/ready': 2.27.0(tslib@2.8.1)
+      '@liff/server-api': 2.27.0(tslib@2.8.1)
+      '@liff/store': 2.27.0(tslib@2.8.1)
+      '@liff/sub-window': 2.27.0(tslib@2.8.1)
+      '@liff/types': 2.27.0
+      '@liff/use': 2.27.0(tslib@2.8.1)
+      '@liff/util': 2.27.0(tslib@2.8.1)
       tslib: 2.8.1
 
-  '@liff/is-api-available@2.26.0(tslib@2.8.1)':
+  '@liff/is-api-available@2.27.0(tslib@2.8.1)':
     dependencies:
-      '@liff/consts': 2.26.0(tslib@2.8.1)
-      '@liff/get-line-version': 2.26.0(tslib@2.8.1)
-      '@liff/get-os': 2.26.0(tslib@2.8.1)
-      '@liff/is-in-client': 2.26.0(tslib@2.8.1)
-      '@liff/is-logged-in': 2.26.0(tslib@2.8.1)
-      '@liff/is-sub-window': 2.26.0(tslib@2.8.1)
-      '@liff/store': 2.26.0(tslib@2.8.1)
-      '@liff/use': 2.26.0(tslib@2.8.1)
-      '@liff/util': 2.26.0(tslib@2.8.1)
+      '@liff/consts': 2.27.0(tslib@2.8.1)
+      '@liff/get-line-version': 2.27.0(tslib@2.8.1)
+      '@liff/get-os': 2.27.0(tslib@2.8.1)
+      '@liff/is-in-client': 2.27.0(tslib@2.8.1)
+      '@liff/is-logged-in': 2.27.0(tslib@2.8.1)
+      '@liff/is-sub-window': 2.27.0(tslib@2.8.1)
+      '@liff/store': 2.27.0(tslib@2.8.1)
+      '@liff/use': 2.27.0(tslib@2.8.1)
+      '@liff/util': 2.27.0(tslib@2.8.1)
       tslib: 2.8.1
 
-  '@liff/is-in-client@2.26.0(tslib@2.8.1)':
+  '@liff/is-in-client@2.27.0(tslib@2.8.1)':
     dependencies:
-      '@liff/consts': 2.26.0(tslib@2.8.1)
-      '@liff/use': 2.26.0(tslib@2.8.1)
-      '@liff/util': 2.26.0(tslib@2.8.1)
+      '@liff/consts': 2.27.0(tslib@2.8.1)
+      '@liff/use': 2.27.0(tslib@2.8.1)
+      '@liff/util': 2.27.0(tslib@2.8.1)
       tslib: 2.8.1
 
-  '@liff/is-logged-in@2.26.0(tslib@2.8.1)':
+  '@liff/is-logged-in@2.27.0(tslib@2.8.1)':
     dependencies:
-      '@liff/store': 2.26.0(tslib@2.8.1)
-      '@liff/use': 2.26.0(tslib@2.8.1)
+      '@liff/store': 2.27.0(tslib@2.8.1)
+      '@liff/use': 2.27.0(tslib@2.8.1)
       tslib: 2.8.1
 
-  '@liff/is-sub-window@2.26.0(tslib@2.8.1)':
+  '@liff/is-sub-window@2.27.0(tslib@2.8.1)':
     dependencies:
-      '@liff/consts': 2.26.0(tslib@2.8.1)
-      '@liff/is-in-client': 2.26.0(tslib@2.8.1)
-      '@liff/store': 2.26.0(tslib@2.8.1)
-      '@liff/use': 2.26.0(tslib@2.8.1)
-      '@liff/util': 2.26.0(tslib@2.8.1)
+      '@liff/consts': 2.27.0(tslib@2.8.1)
+      '@liff/is-in-client': 2.27.0(tslib@2.8.1)
+      '@liff/store': 2.27.0(tslib@2.8.1)
+      '@liff/use': 2.27.0(tslib@2.8.1)
+      '@liff/util': 2.27.0(tslib@2.8.1)
       tslib: 2.8.1
 
-  '@liff/liff-types@2.26.0(tslib@2.8.1)':
+  '@liff/liff-types@2.27.0(tslib@2.8.1)':
     dependencies:
-      '@liff/analytics': 2.26.0(tslib@2.8.1)
-      '@liff/close-window': 2.26.0(tslib@2.8.1)
-      '@liff/create-shortcut-on-home-screen': 2.26.0(tslib@2.8.1)
-      '@liff/get-app-language': 2.26.0(tslib@2.8.1)
-      '@liff/get-friendship': 2.26.0(tslib@2.8.1)
-      '@liff/get-language': 2.26.0(tslib@2.8.1)
-      '@liff/get-line-version': 2.26.0(tslib@2.8.1)
-      '@liff/get-os': 2.26.0(tslib@2.8.1)
-      '@liff/get-profile': 2.26.0(tslib@2.8.1)
-      '@liff/get-version': 2.26.0(tslib@2.8.1)
-      '@liff/i18n': 2.26.0(tslib@2.8.1)
-      '@liff/iap': 2.26.0(tslib@2.8.1)
-      '@liff/init': 2.26.0(tslib@2.8.1)
-      '@liff/is-api-available': 2.26.0(tslib@2.8.1)
-      '@liff/is-in-client': 2.26.0(tslib@2.8.1)
-      '@liff/is-logged-in': 2.26.0(tslib@2.8.1)
-      '@liff/is-sub-window': 2.26.0(tslib@2.8.1)
-      '@liff/login': 2.26.0(tslib@2.8.1)
-      '@liff/logout': 2.26.0(tslib@2.8.1)
-      '@liff/native-bridge': 2.26.0(tslib@2.8.1)
-      '@liff/open-window': 2.26.0(tslib@2.8.1)
-      '@liff/permanent-link': 2.26.0(tslib@2.8.1)
-      '@liff/permission': 2.26.0(tslib@2.8.1)
-      '@liff/ready': 2.26.0(tslib@2.8.1)
-      '@liff/scan-code-v2': 2.26.0(tslib@2.8.1)
-      '@liff/send-messages': 2.26.0(tslib@2.8.1)
-      '@liff/share-target-picker': 2.26.0(tslib@2.8.1)
-      '@liff/store': 2.26.0(tslib@2.8.1)
-      '@liff/sub-window': 2.26.0(tslib@2.8.1)
-      '@liff/use': 2.26.0(tslib@2.8.1)
+      '@liff/analytics': 2.27.0(tslib@2.8.1)
+      '@liff/close-window': 2.27.0(tslib@2.8.1)
+      '@liff/create-shortcut-on-home-screen': 2.27.0(tslib@2.8.1)
+      '@liff/get-app-language': 2.27.0(tslib@2.8.1)
+      '@liff/get-friendship': 2.27.0(tslib@2.8.1)
+      '@liff/get-language': 2.27.0(tslib@2.8.1)
+      '@liff/get-line-version': 2.27.0(tslib@2.8.1)
+      '@liff/get-origins': 2.27.0(tslib@2.8.1)
+      '@liff/get-os': 2.27.0(tslib@2.8.1)
+      '@liff/get-profile': 2.27.0(tslib@2.8.1)
+      '@liff/get-version': 2.27.0(tslib@2.8.1)
+      '@liff/i18n': 2.27.0(tslib@2.8.1)
+      '@liff/iap': 2.27.0(tslib@2.8.1)
+      '@liff/init': 2.27.0(tslib@2.8.1)
+      '@liff/is-api-available': 2.27.0(tslib@2.8.1)
+      '@liff/is-in-client': 2.27.0(tslib@2.8.1)
+      '@liff/is-logged-in': 2.27.0(tslib@2.8.1)
+      '@liff/is-sub-window': 2.27.0(tslib@2.8.1)
+      '@liff/login': 2.27.0(tslib@2.8.1)
+      '@liff/logout': 2.27.0(tslib@2.8.1)
+      '@liff/native-bridge': 2.27.0(tslib@2.8.1)
+      '@liff/open-window': 2.27.0(tslib@2.8.1)
+      '@liff/permanent-link': 2.27.0(tslib@2.8.1)
+      '@liff/permission': 2.27.0(tslib@2.8.1)
+      '@liff/ready': 2.27.0(tslib@2.8.1)
+      '@liff/scan-code-v2': 2.27.0(tslib@2.8.1)
+      '@liff/send-messages': 2.27.0(tslib@2.8.1)
+      '@liff/share-target-picker': 2.27.0(tslib@2.8.1)
+      '@liff/store': 2.27.0(tslib@2.8.1)
+      '@liff/sub-window': 2.27.0(tslib@2.8.1)
+      '@liff/use': 2.27.0(tslib@2.8.1)
       tslib: 2.8.1
     transitivePeerDependencies:
       - debug
       - supports-color
 
-  '@liff/logger@2.26.0(tslib@2.8.1)':
+  '@liff/logger@2.27.0(tslib@2.8.1)':
     dependencies:
       tslib: 2.8.1
 
-  '@liff/login@2.26.0(tslib@2.8.1)':
+  '@liff/login@2.27.0(tslib@2.8.1)':
     dependencies:
-      '@liff/consts': 2.26.0(tslib@2.8.1)
-      '@liff/get-version': 2.26.0(tslib@2.8.1)
-      '@liff/hooks': 2.26.0(tslib@2.8.1)
-      '@liff/is-in-client': 2.26.0(tslib@2.8.1)
-      '@liff/is-sub-window': 2.26.0(tslib@2.8.1)
-      '@liff/logger': 2.26.0(tslib@2.8.1)
-      '@liff/server-api': 2.26.0(tslib@2.8.1)
-      '@liff/store': 2.26.0(tslib@2.8.1)
-      '@liff/sub-window': 2.26.0(tslib@2.8.1)
-      '@liff/use': 2.26.0(tslib@2.8.1)
-      '@liff/util': 2.26.0(tslib@2.8.1)
+      '@liff/consts': 2.27.0(tslib@2.8.1)
+      '@liff/get-version': 2.27.0(tslib@2.8.1)
+      '@liff/hooks': 2.27.0(tslib@2.8.1)
+      '@liff/is-in-client': 2.27.0(tslib@2.8.1)
+      '@liff/is-sub-window': 2.27.0(tslib@2.8.1)
+      '@liff/logger': 2.27.0(tslib@2.8.1)
+      '@liff/server-api': 2.27.0(tslib@2.8.1)
+      '@liff/store': 2.27.0(tslib@2.8.1)
+      '@liff/sub-window': 2.27.0(tslib@2.8.1)
+      '@liff/use': 2.27.0(tslib@2.8.1)
+      '@liff/util': 2.27.0(tslib@2.8.1)
       tiny-sha256: 1.0.2
       tslib: 2.8.1
 
-  '@liff/logout@2.26.0(tslib@2.8.1)':
+  '@liff/logout@2.27.0(tslib@2.8.1)':
     dependencies:
-      '@liff/store': 2.26.0(tslib@2.8.1)
-      '@liff/use': 2.26.0(tslib@2.8.1)
+      '@liff/store': 2.27.0(tslib@2.8.1)
+      '@liff/use': 2.27.0(tslib@2.8.1)
       tslib: 2.8.1
 
-  '@liff/message-bus@2.26.0(tslib@2.8.1)':
+  '@liff/message-bus@2.27.0(tslib@2.8.1)':
     dependencies:
-      '@liff/consts': 2.26.0(tslib@2.8.1)
-      '@liff/store': 2.26.0(tslib@2.8.1)
-      '@liff/util': 2.26.0(tslib@2.8.1)
+      '@liff/consts': 2.27.0(tslib@2.8.1)
+      '@liff/store': 2.27.0(tslib@2.8.1)
+      '@liff/util': 2.27.0(tslib@2.8.1)
       tslib: 2.8.1
 
-  '@liff/native-bridge@2.26.0(tslib@2.8.1)':
+  '@liff/native-bridge@2.27.0(tslib@2.8.1)':
     dependencies:
-      '@liff/consts': 2.26.0(tslib@2.8.1)
-      '@liff/logger': 2.26.0(tslib@2.8.1)
-      '@liff/store': 2.26.0(tslib@2.8.1)
-      '@liff/types': 2.26.0
-      '@liff/util': 2.26.0(tslib@2.8.1)
+      '@liff/consts': 2.27.0(tslib@2.8.1)
+      '@liff/logger': 2.27.0(tslib@2.8.1)
+      '@liff/store': 2.27.0(tslib@2.8.1)
+      '@liff/types': 2.27.0
+      '@liff/util': 2.27.0(tslib@2.8.1)
       tslib: 2.8.1
 
-  '@liff/open-window@2.26.0(tslib@2.8.1)':
+  '@liff/open-window@2.27.0(tslib@2.8.1)':
     dependencies:
-      '@liff/consts': 2.26.0(tslib@2.8.1)
-      '@liff/get-line-version': 2.26.0(tslib@2.8.1)
-      '@liff/get-os': 2.26.0(tslib@2.8.1)
-      '@liff/is-in-client': 2.26.0(tslib@2.8.1)
-      '@liff/native-bridge': 2.26.0(tslib@2.8.1)
-      '@liff/types': 2.26.0
-      '@liff/use': 2.26.0(tslib@2.8.1)
-      '@liff/util': 2.26.0(tslib@2.8.1)
+      '@liff/consts': 2.27.0(tslib@2.8.1)
+      '@liff/get-line-version': 2.27.0(tslib@2.8.1)
+      '@liff/get-os': 2.27.0(tslib@2.8.1)
+      '@liff/is-in-client': 2.27.0(tslib@2.8.1)
+      '@liff/native-bridge': 2.27.0(tslib@2.8.1)
+      '@liff/types': 2.27.0
+      '@liff/use': 2.27.0(tslib@2.8.1)
+      '@liff/util': 2.27.0(tslib@2.8.1)
       tslib: 2.8.1
 
-  '@liff/permanent-link@2.26.0(tslib@2.8.1)':
+  '@liff/permanent-link@2.27.0(tslib@2.8.1)':
     dependencies:
-      '@liff/consts': 2.26.0(tslib@2.8.1)
-      '@liff/server-api': 2.26.0(tslib@2.8.1)
-      '@liff/store': 2.26.0(tslib@2.8.1)
-      '@liff/use': 2.26.0(tslib@2.8.1)
-      '@liff/util': 2.26.0(tslib@2.8.1)
+      '@liff/consts': 2.27.0(tslib@2.8.1)
+      '@liff/server-api': 2.27.0(tslib@2.8.1)
+      '@liff/store': 2.27.0(tslib@2.8.1)
+      '@liff/use': 2.27.0(tslib@2.8.1)
+      '@liff/util': 2.27.0(tslib@2.8.1)
       tslib: 2.8.1
 
-  '@liff/permission@2.26.0(tslib@2.8.1)':
+  '@liff/permission@2.27.0(tslib@2.8.1)':
     dependencies:
-      '@liff/consts': 2.26.0(tslib@2.8.1)
-      '@liff/is-api-available': 2.26.0(tslib@2.8.1)
-      '@liff/is-in-client': 2.26.0(tslib@2.8.1)
-      '@liff/server-api': 2.26.0(tslib@2.8.1)
-      '@liff/store': 2.26.0(tslib@2.8.1)
-      '@liff/sub-window': 2.26.0(tslib@2.8.1)
-      '@liff/use': 2.26.0(tslib@2.8.1)
-      '@liff/util': 2.26.0(tslib@2.8.1)
+      '@liff/consts': 2.27.0(tslib@2.8.1)
+      '@liff/is-api-available': 2.27.0(tslib@2.8.1)
+      '@liff/is-in-client': 2.27.0(tslib@2.8.1)
+      '@liff/server-api': 2.27.0(tslib@2.8.1)
+      '@liff/store': 2.27.0(tslib@2.8.1)
+      '@liff/sub-window': 2.27.0(tslib@2.8.1)
+      '@liff/use': 2.27.0(tslib@2.8.1)
+      '@liff/util': 2.27.0(tslib@2.8.1)
       tslib: 2.8.1
 
-  '@liff/ready@2.26.0(tslib@2.8.1)':
+  '@liff/ready@2.27.0(tslib@2.8.1)':
     dependencies:
       tslib: 2.8.1
 
-  '@liff/scan-code-v2@2.26.0(tslib@2.8.1)':
+  '@liff/scan-code-v2@2.27.0(tslib@2.8.1)':
     dependencies:
-      '@liff/consts': 2.26.0(tslib@2.8.1)
-      '@liff/is-api-available': 2.26.0(tslib@2.8.1)
-      '@liff/sub-window': 2.26.0(tslib@2.8.1)
-      '@liff/use': 2.26.0(tslib@2.8.1)
-      '@liff/util': 2.26.0(tslib@2.8.1)
+      '@liff/consts': 2.27.0(tslib@2.8.1)
+      '@liff/is-api-available': 2.27.0(tslib@2.8.1)
+      '@liff/sub-window': 2.27.0(tslib@2.8.1)
+      '@liff/use': 2.27.0(tslib@2.8.1)
+      '@liff/util': 2.27.0(tslib@2.8.1)
       tslib: 2.8.1
 
-  '@liff/scan-code@2.26.0(tslib@2.8.1)':
+  '@liff/scan-code@2.27.0(tslib@2.8.1)':
     dependencies:
-      '@liff/types': 2.26.0
+      '@liff/types': 2.27.0
       tslib: 2.8.1
 
-  '@liff/send-messages@2.26.0(tslib@2.8.1)':
+  '@liff/send-messages@2.27.0(tslib@2.8.1)':
     dependencies:
-      '@liff/consts': 2.26.0(tslib@2.8.1)
-      '@liff/get-line-version': 2.26.0(tslib@2.8.1)
-      '@liff/get-os': 2.26.0(tslib@2.8.1)
-      '@liff/permission': 2.26.0(tslib@2.8.1)
-      '@liff/server-api': 2.26.0(tslib@2.8.1)
-      '@liff/use': 2.26.0(tslib@2.8.1)
-      '@liff/util': 2.26.0(tslib@2.8.1)
+      '@liff/consts': 2.27.0(tslib@2.8.1)
+      '@liff/get-line-version': 2.27.0(tslib@2.8.1)
+      '@liff/get-os': 2.27.0(tslib@2.8.1)
+      '@liff/permission': 2.27.0(tslib@2.8.1)
+      '@liff/server-api': 2.27.0(tslib@2.8.1)
+      '@liff/use': 2.27.0(tslib@2.8.1)
+      '@liff/util': 2.27.0(tslib@2.8.1)
       '@line/bot-sdk': 7.7.0
       tslib: 2.8.1
     transitivePeerDependencies:
       - debug
       - supports-color
 
-  '@liff/server-api@2.26.0(tslib@2.8.1)':
+  '@liff/server-api@2.27.0(tslib@2.8.1)':
     dependencies:
-      '@liff/consts': 2.26.0(tslib@2.8.1)
-      '@liff/store': 2.26.0(tslib@2.8.1)
-      '@liff/util': 2.26.0(tslib@2.8.1)
+      '@liff/consts': 2.27.0(tslib@2.8.1)
+      '@liff/store': 2.27.0(tslib@2.8.1)
+      '@liff/util': 2.27.0(tslib@2.8.1)
       tslib: 2.8.1
 
-  '@liff/share-target-picker@2.26.0(tslib@2.8.1)':
+  '@liff/share-target-picker@2.27.0(tslib@2.8.1)':
     dependencies:
-      '@liff/analytics': 2.26.0(tslib@2.8.1)
-      '@liff/consts': 2.26.0(tslib@2.8.1)
-      '@liff/get-line-version': 2.26.0(tslib@2.8.1)
-      '@liff/get-os': 2.26.0(tslib@2.8.1)
-      '@liff/is-api-available': 2.26.0(tslib@2.8.1)
-      '@liff/is-in-client': 2.26.0(tslib@2.8.1)
-      '@liff/is-logged-in': 2.26.0(tslib@2.8.1)
-      '@liff/is-sub-window': 2.26.0(tslib@2.8.1)
-      '@liff/logger': 2.26.0(tslib@2.8.1)
-      '@liff/send-messages': 2.26.0(tslib@2.8.1)
-      '@liff/server-api': 2.26.0(tslib@2.8.1)
-      '@liff/store': 2.26.0(tslib@2.8.1)
-      '@liff/types': 2.26.0
-      '@liff/use': 2.26.0(tslib@2.8.1)
-      '@liff/util': 2.26.0(tslib@2.8.1)
-      '@liff/window-postmessage': 2.26.0(tslib@2.8.1)
+      '@liff/analytics': 2.27.0(tslib@2.8.1)
+      '@liff/consts': 2.27.0(tslib@2.8.1)
+      '@liff/get-line-version': 2.27.0(tslib@2.8.1)
+      '@liff/get-os': 2.27.0(tslib@2.8.1)
+      '@liff/is-api-available': 2.27.0(tslib@2.8.1)
+      '@liff/is-in-client': 2.27.0(tslib@2.8.1)
+      '@liff/is-logged-in': 2.27.0(tslib@2.8.1)
+      '@liff/is-sub-window': 2.27.0(tslib@2.8.1)
+      '@liff/logger': 2.27.0(tslib@2.8.1)
+      '@liff/send-messages': 2.27.0(tslib@2.8.1)
+      '@liff/server-api': 2.27.0(tslib@2.8.1)
+      '@liff/store': 2.27.0(tslib@2.8.1)
+      '@liff/types': 2.27.0
+      '@liff/use': 2.27.0(tslib@2.8.1)
+      '@liff/util': 2.27.0(tslib@2.8.1)
+      '@liff/window-postmessage': 2.27.0(tslib@2.8.1)
       tslib: 2.8.1
     transitivePeerDependencies:
       - debug
       - supports-color
 
-  '@liff/store@2.26.0(tslib@2.8.1)':
+  '@liff/store@2.27.0(tslib@2.8.1)':
     dependencies:
-      '@liff/consts': 2.26.0(tslib@2.8.1)
-      '@liff/is-in-client': 2.26.0(tslib@2.8.1)
-      '@liff/types': 2.26.0
-      '@liff/use': 2.26.0(tslib@2.8.1)
-      '@liff/util': 2.26.0(tslib@2.8.1)
+      '@liff/consts': 2.27.0(tslib@2.8.1)
+      '@liff/is-in-client': 2.27.0(tslib@2.8.1)
+      '@liff/types': 2.27.0
+      '@liff/use': 2.27.0(tslib@2.8.1)
+      '@liff/util': 2.27.0(tslib@2.8.1)
       tslib: 2.8.1
 
-  '@liff/sub-window@2.26.0(tslib@2.8.1)':
+  '@liff/sub-window@2.27.0(tslib@2.8.1)':
     dependencies:
-      '@liff/close-window': 2.26.0(tslib@2.8.1)
-      '@liff/consts': 2.26.0(tslib@2.8.1)
-      '@liff/get-os': 2.26.0(tslib@2.8.1)
-      '@liff/is-api-available': 2.26.0(tslib@2.8.1)
-      '@liff/is-in-client': 2.26.0(tslib@2.8.1)
-      '@liff/is-sub-window': 2.26.0(tslib@2.8.1)
-      '@liff/logger': 2.26.0(tslib@2.8.1)
-      '@liff/message-bus': 2.26.0(tslib@2.8.1)
-      '@liff/server-api': 2.26.0(tslib@2.8.1)
-      '@liff/store': 2.26.0(tslib@2.8.1)
-      '@liff/use': 2.26.0(tslib@2.8.1)
-      '@liff/util': 2.26.0(tslib@2.8.1)
+      '@liff/close-window': 2.27.0(tslib@2.8.1)
+      '@liff/consts': 2.27.0(tslib@2.8.1)
+      '@liff/get-os': 2.27.0(tslib@2.8.1)
+      '@liff/is-api-available': 2.27.0(tslib@2.8.1)
+      '@liff/is-in-client': 2.27.0(tslib@2.8.1)
+      '@liff/is-sub-window': 2.27.0(tslib@2.8.1)
+      '@liff/logger': 2.27.0(tslib@2.8.1)
+      '@liff/message-bus': 2.27.0(tslib@2.8.1)
+      '@liff/server-api': 2.27.0(tslib@2.8.1)
+      '@liff/store': 2.27.0(tslib@2.8.1)
+      '@liff/use': 2.27.0(tslib@2.8.1)
+      '@liff/util': 2.27.0(tslib@2.8.1)
       tslib: 2.8.1
 
-  '@liff/types@2.26.0': {}
+  '@liff/types@2.27.0': {}
 
-  '@liff/use@2.26.0(tslib@2.8.1)':
+  '@liff/use@2.27.0(tslib@2.8.1)':
     dependencies:
-      '@liff/hooks': 2.26.0(tslib@2.8.1)
-      '@liff/logger': 2.26.0(tslib@2.8.1)
+      '@liff/hooks': 2.27.0(tslib@2.8.1)
+      '@liff/logger': 2.27.0(tslib@2.8.1)
       tslib: 2.8.1
 
-  '@liff/util@2.26.0(tslib@2.8.1)':
+  '@liff/util@2.27.0(tslib@2.8.1)':
     dependencies:
-      '@liff/consts': 2.26.0(tslib@2.8.1)
-      '@liff/logger': 2.26.0(tslib@2.8.1)
+      '@liff/consts': 2.27.0(tslib@2.8.1)
+      '@liff/logger': 2.27.0(tslib@2.8.1)
       tslib: 2.8.1
 
-  '@liff/window-postmessage@2.26.0(tslib@2.8.1)':
+  '@liff/window-postmessage@2.27.0(tslib@2.8.1)':
     dependencies:
-      '@liff/consts': 2.26.0(tslib@2.8.1)
-      '@liff/logger': 2.26.0(tslib@2.8.1)
-      '@liff/util': 2.26.0(tslib@2.8.1)
+      '@liff/consts': 2.27.0(tslib@2.8.1)
+      '@liff/logger': 2.27.0(tslib@2.8.1)
+      '@liff/util': 2.27.0(tslib@2.8.1)
       tslib: 2.8.1
 
   '@line/bot-sdk@7.7.0':
@@ -3083,45 +2977,46 @@ snapshots:
       - debug
       - supports-color
 
-  '@line/liff@2.26.0':
+  '@line/liff@2.27.0':
     dependencies:
-      '@liff/analytics': 2.26.0(tslib@2.8.1)
-      '@liff/close-window': 2.26.0(tslib@2.8.1)
-      '@liff/consts': 2.26.0(tslib@2.8.1)
-      '@liff/core': 2.26.0(tslib@2.8.1)
-      '@liff/create-shortcut-on-home-screen': 2.26.0(tslib@2.8.1)
-      '@liff/extensions': 2.26.0(tslib@2.8.1)
-      '@liff/get-app-language': 2.26.0(tslib@2.8.1)
-      '@liff/get-friendship': 2.26.0(tslib@2.8.1)
-      '@liff/get-language': 2.26.0(tslib@2.8.1)
-      '@liff/get-line-version': 2.26.0(tslib@2.8.1)
-      '@liff/get-os': 2.26.0(tslib@2.8.1)
-      '@liff/get-profile': 2.26.0(tslib@2.8.1)
-      '@liff/get-version': 2.26.0(tslib@2.8.1)
-      '@liff/hooks': 2.26.0(tslib@2.8.1)
-      '@liff/i18n': 2.26.0(tslib@2.8.1)
-      '@liff/iap': 2.26.0(tslib@2.8.1)
-      '@liff/init': 2.26.0(tslib@2.8.1)
-      '@liff/is-api-available': 2.26.0(tslib@2.8.1)
-      '@liff/is-in-client': 2.26.0(tslib@2.8.1)
-      '@liff/is-logged-in': 2.26.0(tslib@2.8.1)
-      '@liff/is-sub-window': 2.26.0(tslib@2.8.1)
-      '@liff/liff-types': 2.26.0(tslib@2.8.1)
-      '@liff/login': 2.26.0(tslib@2.8.1)
-      '@liff/logout': 2.26.0(tslib@2.8.1)
-      '@liff/native-bridge': 2.26.0(tslib@2.8.1)
-      '@liff/open-window': 2.26.0(tslib@2.8.1)
-      '@liff/permanent-link': 2.26.0(tslib@2.8.1)
-      '@liff/permission': 2.26.0(tslib@2.8.1)
-      '@liff/ready': 2.26.0(tslib@2.8.1)
-      '@liff/scan-code-v2': 2.26.0(tslib@2.8.1)
-      '@liff/send-messages': 2.26.0(tslib@2.8.1)
-      '@liff/server-api': 2.26.0(tslib@2.8.1)
-      '@liff/share-target-picker': 2.26.0(tslib@2.8.1)
-      '@liff/store': 2.26.0(tslib@2.8.1)
-      '@liff/sub-window': 2.26.0(tslib@2.8.1)
-      '@liff/use': 2.26.0(tslib@2.8.1)
-      '@liff/util': 2.26.0(tslib@2.8.1)
+      '@liff/analytics': 2.27.0(tslib@2.8.1)
+      '@liff/close-window': 2.27.0(tslib@2.8.1)
+      '@liff/consts': 2.27.0(tslib@2.8.1)
+      '@liff/core': 2.27.0(tslib@2.8.1)
+      '@liff/create-shortcut-on-home-screen': 2.27.0(tslib@2.8.1)
+      '@liff/extensions': 2.27.0(tslib@2.8.1)
+      '@liff/get-app-language': 2.27.0(tslib@2.8.1)
+      '@liff/get-friendship': 2.27.0(tslib@2.8.1)
+      '@liff/get-language': 2.27.0(tslib@2.8.1)
+      '@liff/get-line-version': 2.27.0(tslib@2.8.1)
+      '@liff/get-origins': 2.27.0(tslib@2.8.1)
+      '@liff/get-os': 2.27.0(tslib@2.8.1)
+      '@liff/get-profile': 2.27.0(tslib@2.8.1)
+      '@liff/get-version': 2.27.0(tslib@2.8.1)
+      '@liff/hooks': 2.27.0(tslib@2.8.1)
+      '@liff/i18n': 2.27.0(tslib@2.8.1)
+      '@liff/iap': 2.27.0(tslib@2.8.1)
+      '@liff/init': 2.27.0(tslib@2.8.1)
+      '@liff/is-api-available': 2.27.0(tslib@2.8.1)
+      '@liff/is-in-client': 2.27.0(tslib@2.8.1)
+      '@liff/is-logged-in': 2.27.0(tslib@2.8.1)
+      '@liff/is-sub-window': 2.27.0(tslib@2.8.1)
+      '@liff/liff-types': 2.27.0(tslib@2.8.1)
+      '@liff/login': 2.27.0(tslib@2.8.1)
+      '@liff/logout': 2.27.0(tslib@2.8.1)
+      '@liff/native-bridge': 2.27.0(tslib@2.8.1)
+      '@liff/open-window': 2.27.0(tslib@2.8.1)
+      '@liff/permanent-link': 2.27.0(tslib@2.8.1)
+      '@liff/permission': 2.27.0(tslib@2.8.1)
+      '@liff/ready': 2.27.0(tslib@2.8.1)
+      '@liff/scan-code-v2': 2.27.0(tslib@2.8.1)
+      '@liff/send-messages': 2.27.0(tslib@2.8.1)
+      '@liff/server-api': 2.27.0(tslib@2.8.1)
+      '@liff/share-target-picker': 2.27.0(tslib@2.8.1)
+      '@liff/store': 2.27.0(tslib@2.8.1)
+      '@liff/sub-window': 2.27.0(tslib@2.8.1)
+      '@liff/use': 2.27.0(tslib@2.8.1)
+      '@liff/util': 2.27.0(tslib@2.8.1)
       tslib: 2.8.1
       whatwg-fetch: 3.6.20
     transitivePeerDependencies:
@@ -3172,8 +3067,6 @@ snapshots:
   '@radix-ui/number@1.1.0': {}
 
   '@radix-ui/primitive@1.1.1': {}
-
-  '@radix-ui/primitive@1.1.2': {}
 
   '@radix-ui/react-accordion@1.2.2(@types/react-dom@19.0.0)(@types/react@19.0.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
@@ -3280,18 +3173,6 @@ snapshots:
       '@types/react': 19.0.0
       '@types/react-dom': 19.0.0
 
-  '@radix-ui/react-collection@1.1.6(@types/react-dom@19.0.0)(@types/react@19.0.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
-    dependencies:
-      '@radix-ui/react-compose-refs': 1.1.2(@types/react@19.0.0)(react@19.0.0)
-      '@radix-ui/react-context': 1.1.2(@types/react@19.0.0)(react@19.0.0)
-      '@radix-ui/react-primitive': 2.1.2(@types/react-dom@19.0.0)(@types/react@19.0.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@radix-ui/react-slot': 1.2.2(@types/react@19.0.0)(react@19.0.0)
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
-    optionalDependencies:
-      '@types/react': 19.0.0
-      '@types/react-dom': 19.0.0
-
   '@radix-ui/react-compose-refs@1.1.1(@types/react@19.0.0)(react@19.0.0)':
     dependencies:
       react: 19.0.0
@@ -3324,12 +3205,6 @@ snapshots:
     optionalDependencies:
       '@types/react': 19.0.0
 
-  '@radix-ui/react-context@1.1.2(@types/react@19.0.0)(react@19.0.0)':
-    dependencies:
-      react: 19.0.0
-    optionalDependencies:
-      '@types/react': 19.0.0
-
   '@radix-ui/react-dialog@1.1.4(@types/react-dom@19.0.0)(@types/react@19.0.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
       '@radix-ui/primitive': 1.1.1
@@ -3353,12 +3228,6 @@ snapshots:
       '@types/react-dom': 19.0.0
 
   '@radix-ui/react-direction@1.1.0(@types/react@19.0.0)(react@19.0.0)':
-    dependencies:
-      react: 19.0.0
-    optionalDependencies:
-      '@types/react': 19.0.0
-
-  '@radix-ui/react-direction@1.1.1(@types/react@19.0.0)(react@19.0.0)':
     dependencies:
       react: 19.0.0
     optionalDependencies:
@@ -3440,9 +3309,9 @@ snapshots:
     optionalDependencies:
       '@types/react': 19.0.0
 
-  '@radix-ui/react-label@2.1.6(@types/react-dom@19.0.0)(@types/react@19.0.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
+  '@radix-ui/react-label@2.1.1(@types/react-dom@19.0.0)(@types/react@19.0.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
-      '@radix-ui/react-primitive': 2.1.2(@types/react-dom@19.0.0)(@types/react@19.0.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      '@radix-ui/react-primitive': 2.0.1(@types/react-dom@19.0.0)(@types/react@19.0.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
     optionalDependencies:
@@ -3576,16 +3445,6 @@ snapshots:
       '@types/react': 19.0.0
       '@types/react-dom': 19.0.0
 
-  '@radix-ui/react-presence@1.1.4(@types/react-dom@19.0.0)(@types/react@19.0.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
-    dependencies:
-      '@radix-ui/react-compose-refs': 1.1.2(@types/react@19.0.0)(react@19.0.0)
-      '@radix-ui/react-use-layout-effect': 1.1.1(@types/react@19.0.0)(react@19.0.0)
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
-    optionalDependencies:
-      '@types/react': 19.0.0
-      '@types/react-dom': 19.0.0
-
   '@radix-ui/react-primitive@2.0.1(@types/react-dom@19.0.0)(@types/react@19.0.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
       '@radix-ui/react-slot': 1.1.1(@types/react@19.0.0)(react@19.0.0)
@@ -3604,28 +3463,28 @@ snapshots:
       '@types/react': 19.0.0
       '@types/react-dom': 19.0.0
 
-  '@radix-ui/react-progress@1.1.6(@types/react-dom@19.0.0)(@types/react@19.0.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
+  '@radix-ui/react-progress@1.1.1(@types/react-dom@19.0.0)(@types/react@19.0.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
-      '@radix-ui/react-context': 1.1.2(@types/react@19.0.0)(react@19.0.0)
-      '@radix-ui/react-primitive': 2.1.2(@types/react-dom@19.0.0)(@types/react@19.0.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      '@radix-ui/react-context': 1.1.1(@types/react@19.0.0)(react@19.0.0)
+      '@radix-ui/react-primitive': 2.0.1(@types/react-dom@19.0.0)(@types/react@19.0.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
     optionalDependencies:
       '@types/react': 19.0.0
       '@types/react-dom': 19.0.0
 
-  '@radix-ui/react-radio-group@1.3.6(@types/react-dom@19.0.0)(@types/react@19.0.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
+  '@radix-ui/react-radio-group@1.2.2(@types/react-dom@19.0.0)(@types/react@19.0.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
-      '@radix-ui/primitive': 1.1.2
-      '@radix-ui/react-compose-refs': 1.1.2(@types/react@19.0.0)(react@19.0.0)
-      '@radix-ui/react-context': 1.1.2(@types/react@19.0.0)(react@19.0.0)
-      '@radix-ui/react-direction': 1.1.1(@types/react@19.0.0)(react@19.0.0)
-      '@radix-ui/react-presence': 1.1.4(@types/react-dom@19.0.0)(@types/react@19.0.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@radix-ui/react-primitive': 2.1.2(@types/react-dom@19.0.0)(@types/react@19.0.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@radix-ui/react-roving-focus': 1.1.9(@types/react-dom@19.0.0)(@types/react@19.0.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@radix-ui/react-use-controllable-state': 1.2.2(@types/react@19.0.0)(react@19.0.0)
-      '@radix-ui/react-use-previous': 1.1.1(@types/react@19.0.0)(react@19.0.0)
-      '@radix-ui/react-use-size': 1.1.1(@types/react@19.0.0)(react@19.0.0)
+      '@radix-ui/primitive': 1.1.1
+      '@radix-ui/react-compose-refs': 1.1.1(@types/react@19.0.0)(react@19.0.0)
+      '@radix-ui/react-context': 1.1.1(@types/react@19.0.0)(react@19.0.0)
+      '@radix-ui/react-direction': 1.1.0(@types/react@19.0.0)(react@19.0.0)
+      '@radix-ui/react-presence': 1.1.2(@types/react-dom@19.0.0)(@types/react@19.0.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      '@radix-ui/react-primitive': 2.0.1(@types/react-dom@19.0.0)(@types/react@19.0.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      '@radix-ui/react-roving-focus': 1.1.1(@types/react-dom@19.0.0)(@types/react@19.0.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      '@radix-ui/react-use-controllable-state': 1.1.0(@types/react@19.0.0)(react@19.0.0)
+      '@radix-ui/react-use-previous': 1.1.0(@types/react@19.0.0)(react@19.0.0)
+      '@radix-ui/react-use-size': 1.1.0(@types/react@19.0.0)(react@19.0.0)
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
     optionalDependencies:
@@ -3643,23 +3502,6 @@ snapshots:
       '@radix-ui/react-primitive': 2.0.1(@types/react-dom@19.0.0)(@types/react@19.0.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@radix-ui/react-use-callback-ref': 1.1.0(@types/react@19.0.0)(react@19.0.0)
       '@radix-ui/react-use-controllable-state': 1.1.0(@types/react@19.0.0)(react@19.0.0)
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
-    optionalDependencies:
-      '@types/react': 19.0.0
-      '@types/react-dom': 19.0.0
-
-  '@radix-ui/react-roving-focus@1.1.9(@types/react-dom@19.0.0)(@types/react@19.0.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
-    dependencies:
-      '@radix-ui/primitive': 1.1.2
-      '@radix-ui/react-collection': 1.1.6(@types/react-dom@19.0.0)(@types/react@19.0.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@radix-ui/react-compose-refs': 1.1.2(@types/react@19.0.0)(react@19.0.0)
-      '@radix-ui/react-context': 1.1.2(@types/react@19.0.0)(react@19.0.0)
-      '@radix-ui/react-direction': 1.1.1(@types/react@19.0.0)(react@19.0.0)
-      '@radix-ui/react-id': 1.1.1(@types/react@19.0.0)(react@19.0.0)
-      '@radix-ui/react-primitive': 2.1.2(@types/react-dom@19.0.0)(@types/react@19.0.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@radix-ui/react-use-callback-ref': 1.1.1(@types/react@19.0.0)(react@19.0.0)
-      '@radix-ui/react-use-controllable-state': 1.2.2(@types/react@19.0.0)(react@19.0.0)
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
     optionalDependencies:
@@ -3748,6 +3590,13 @@ snapshots:
       '@types/react': 19.0.0
 
   '@radix-ui/react-slot@1.2.2(@types/react@19.0.0)(react@19.0.0)':
+    dependencies:
+      '@radix-ui/react-compose-refs': 1.1.2(@types/react@19.0.0)(react@19.0.0)
+      react: 19.0.0
+    optionalDependencies:
+      '@types/react': 19.0.0
+
+  '@radix-ui/react-slot@1.2.3(@types/react@19.0.0)(react@19.0.0)':
     dependencies:
       '@radix-ui/react-compose-refs': 1.1.2(@types/react@19.0.0)(react@19.0.0)
       react: 19.0.0
@@ -3857,30 +3706,9 @@ snapshots:
     optionalDependencies:
       '@types/react': 19.0.0
 
-  '@radix-ui/react-use-callback-ref@1.1.1(@types/react@19.0.0)(react@19.0.0)':
-    dependencies:
-      react: 19.0.0
-    optionalDependencies:
-      '@types/react': 19.0.0
-
   '@radix-ui/react-use-controllable-state@1.1.0(@types/react@19.0.0)(react@19.0.0)':
     dependencies:
       '@radix-ui/react-use-callback-ref': 1.1.0(@types/react@19.0.0)(react@19.0.0)
-      react: 19.0.0
-    optionalDependencies:
-      '@types/react': 19.0.0
-
-  '@radix-ui/react-use-controllable-state@1.2.2(@types/react@19.0.0)(react@19.0.0)':
-    dependencies:
-      '@radix-ui/react-use-effect-event': 0.0.2(@types/react@19.0.0)(react@19.0.0)
-      '@radix-ui/react-use-layout-effect': 1.1.1(@types/react@19.0.0)(react@19.0.0)
-      react: 19.0.0
-    optionalDependencies:
-      '@types/react': 19.0.0
-
-  '@radix-ui/react-use-effect-event@0.0.2(@types/react@19.0.0)(react@19.0.0)':
-    dependencies:
-      '@radix-ui/react-use-layout-effect': 1.1.1(@types/react@19.0.0)(react@19.0.0)
       react: 19.0.0
     optionalDependencies:
       '@types/react': 19.0.0
@@ -3910,12 +3738,6 @@ snapshots:
     optionalDependencies:
       '@types/react': 19.0.0
 
-  '@radix-ui/react-use-previous@1.1.1(@types/react@19.0.0)(react@19.0.0)':
-    dependencies:
-      react: 19.0.0
-    optionalDependencies:
-      '@types/react': 19.0.0
-
   '@radix-ui/react-use-rect@1.1.0(@types/react@19.0.0)(react@19.0.0)':
     dependencies:
       '@radix-ui/rect': 1.1.0
@@ -3926,13 +3748,6 @@ snapshots:
   '@radix-ui/react-use-size@1.1.0(@types/react@19.0.0)(react@19.0.0)':
     dependencies:
       '@radix-ui/react-use-layout-effect': 1.1.0(@types/react@19.0.0)(react@19.0.0)
-      react: 19.0.0
-    optionalDependencies:
-      '@types/react': 19.0.0
-
-  '@radix-ui/react-use-size@1.1.1(@types/react@19.0.0)(react@19.0.0)':
-    dependencies:
-      '@radix-ui/react-use-layout-effect': 1.1.1(@types/react@19.0.0)(react@19.0.0)
       react: 19.0.0
     optionalDependencies:
       '@types/react': 19.0.0
@@ -4034,14 +3849,14 @@ snapshots:
 
   asynckit@0.4.0: {}
 
-  autoprefixer@10.4.20(postcss@8.0.0):
+  autoprefixer@10.4.20(postcss@8.5.3):
     dependencies:
       browserslist: 4.24.5
       caniuse-lite: 1.0.30001718
       fraction.js: 4.3.7
       normalize-range: 0.1.2
       picocolors: 1.1.1
-      postcss: 8.0.0
+      postcss: 8.5.3
       postcss-value-parser: 4.2.0
 
   axios@1.9.0:
@@ -4164,8 +3979,6 @@ snapshots:
       color-convert: 2.0.1
       color-string: 1.9.1
     optional: true
-
-  colorette@1.4.0: {}
 
   combined-stream@1.0.8:
     dependencies:
@@ -4440,13 +4253,7 @@ snapshots:
 
   is-number@7.0.0: {}
 
-  isarray@1.0.0: {}
-
   isexe@2.0.0: {}
-
-  isobject@2.1.0:
-    dependencies:
-      isarray: 1.0.0
 
   jackspeak@3.4.3:
     dependencies:
@@ -4459,11 +4266,6 @@ snapshots:
   js-tokens@4.0.0: {}
 
   lilconfig@3.1.3: {}
-
-  line-column@1.0.2:
-    dependencies:
-      isarray: 1.0.0
-      isobject: 2.1.0
 
   lines-and-columns@1.2.4: {}
 
@@ -4609,13 +4411,6 @@ snapshots:
       util-deprecate: 1.0.2
 
   postcss-value-parser@4.2.0: {}
-
-  postcss@8.0.0:
-    dependencies:
-      colorette: 1.4.0
-      line-column: 1.0.2
-      nanoid: 3.3.11
-      source-map: 0.6.1
 
   postcss@8.4.31:
     dependencies:
@@ -4855,8 +4650,6 @@ snapshots:
       react-dom: 19.0.0(react@19.0.0)
 
   source-map-js@1.2.1: {}
-
-  source-map@0.6.1: {}
 
   statuses@2.0.1: {}
 
