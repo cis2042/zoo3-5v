@@ -32,7 +32,7 @@ export default function Home() {
   const [linkCopied, setLinkCopied] = useState(false)
   const [isWalletConnected, setIsWalletConnected] = useState(false)
   const [isConnecting, setIsConnecting] = useState(false)
-  const referralLink = "https://zoo3.app/register?ref=Kkwf5b"
+  const referralLink = "https://bitbee.app/register?ref=Kkwf5b"
 
   // Load saved data on component mount
   useEffect(() => {

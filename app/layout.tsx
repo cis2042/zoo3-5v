@@ -6,9 +6,9 @@ import { ThemeProvider } from "@/components/theme-provider"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
-  title: "ZOO3 - 獎勵任務平台",
+  title: "BitBee - 獎勵任務平台",
   description: "完成任務獲取獎勵",
-    generator: 'v0.dev'
+    generator: 'v0.app'
 }
 
 export default function RootLayout({

@@ -23,7 +23,7 @@ export default function LiffPage() {
     // Generate a random referral link for demo purposes
     if (profile) {
       const randomRef = Math.random().toString(36).substring(2, 8)
-      setReferralLink(`https://zoo-financial.vercel.app/register?ref=${randomRef}`)
+      setReferralLink(`https://bitbee.app/register?ref=${randomRef}`)
     }
   }, [profile])
 
@@ -180,7 +180,7 @@ export default function LiffPage() {
               <Button
                 variant="outline"
                 size="icon"
-                className="shrink-0 border-lion-orange text-lion-orange hover:bg-lion-orange/10"
+                className="shrink-0 border-lion-orange text-lion-orange hover:bg-lion-orange/10 bg-transparent"
                 onClick={copyReferralLink}
                 disabled={!isLoggedIn}
               >
