@@ -11,6 +11,7 @@ import { toast } from "@/components/ui/use-toast"
 export default function TasksPage() {
   const [completedTasks, setCompletedTasks] = useState<string[]>([])
   const [referralLink, setReferralLink] = useState("")
+  const [discordVerifying, setDiscordVerifying] = useState(false)
 
   useEffect(() => {
     // Generate referral link - you can customize this logic
@@ -38,9 +39,28 @@ export default function TasksPage() {
   }
 
   // Simulate Discord OAuth callback
-  const handleDiscordCallback = () => {
-    // In a real app, this would be triggered by the OAuth callback
-    completeTask("discord", "+5 $ZOO")
+  const handleDiscordCallback = async () => {
+    setDiscordVerifying(true)
+
+    try {
+      // In a real app, this would verify the Discord OAuth callback
+      // For now, we'll simulate the verification process
+      await new Promise((resolve) => setTimeout(resolve, 2000))
+
+      completeTask("discord", "+5 $ZOO")
+
+      toast({
+        title: "Discord 驗證成功!",
+        description: "您已成功加入社區並完成驗證",
+      })
+    } catch (error) {
+      toast({
+        title: "驗證失敗",
+        description: "請確保您已加入 Discord 社區",
+      })
+    } finally {
+      setDiscordVerifying(false)
+    }
   }
 
   return (
@@ -67,6 +87,7 @@ export default function TasksPage() {
             isCompleted={completedTasks.includes("discord")}
             onComplete={() => completeTask("discord", "+5 $ZOO")}
             onDiscordCallback={handleDiscordCallback}
+            isVerifying={discordVerifying}
           />
 
           {/* Social Media Sharing */}
@@ -99,6 +120,7 @@ interface TaskCardProps {
   onComplete: () => void
   onDiscordCallback?: () => void
   referralLink?: string
+  isVerifying?: boolean
 }
 
 function TaskCard({
@@ -111,6 +133,7 @@ function TaskCard({
   onComplete,
   onDiscordCallback,
   referralLink = "",
+  isVerifying = false,
 }: TaskCardProps) {
   const [isExpanded, setIsExpanded] = useState(false)
 
@@ -179,9 +202,29 @@ function TaskCard({
           <div className="border-t border-gray-100 pt-3">
             {id === "discord" && (
               <div className="space-y-3">
-                <p className="text-sm text-gray-600">
-                  加入我們的 Discord 社區，與其他 ZOO3 用戶交流，獲取最新資訊和獨家福利。
-                </p>
+                <p className="text-sm text-gray-600">完成以下步驟以獲得獎勵：</p>
+
+                <div className="space-y-2 bg-lion-face-light p-3 rounded-lg border border-lion-face">
+                  <div className="flex items-start gap-2">
+                    <div className="bg-lion-orange text-white rounded-full w-5 h-5 flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">
+                      1
+                    </div>
+                    <p className="text-sm text-gray-700">點擊下方按鈕加入 Discord 社區</p>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <div className="bg-lion-orange text-white rounded-full w-5 h-5 flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">
+                      2
+                    </div>
+                    <p className="text-sm text-gray-700">在 Discord 中完成身份驗證</p>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <div className="bg-lion-orange text-white rounded-full w-5 h-5 flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">
+                      3
+                    </div>
+                    <p className="text-sm text-gray-700">返回此頁面點擊「驗證加入」按鈕</p>
+                  </div>
+                </div>
+
                 <Button
                   variant="teal"
                   className="w-full flex items-center justify-center gap-2"
@@ -190,6 +233,32 @@ function TaskCard({
                   <ExternalLink className="h-4 w-4" />
                   加入 Discord 社區
                 </Button>
+
+                <Button
+                  variant="orange"
+                  className="w-full flex items-center justify-center gap-2"
+                  onClick={(e) => {
+                    e.stopPropagation()
+                    if (onDiscordCallback) {
+                      onDiscordCallback()
+                    }
+                  }}
+                  disabled={isVerifying}
+                >
+                  {isVerifying ? (
+                    <>
+                      <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
+                      驗證中...
+                    </>
+                  ) : (
+                    <>
+                      <Check className="h-4 w-4" />
+                      驗證加入
+                    </>
+                  )}
+                </Button>
+
+                <p className="text-xs text-gray-500 text-center">完成驗證後即可獲得 +5 $ZOO 獎勵</p>
               </div>
             )}
 
